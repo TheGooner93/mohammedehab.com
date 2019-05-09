@@ -4,6 +4,7 @@ const Footer = () => {
   return (
     <footer
       style={{
+        textAlign: "center",
         position: "absolute",
         background: "black",
         width: "100%",
