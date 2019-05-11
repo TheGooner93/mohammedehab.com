@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RoleCarousel from "../components/roleCarousel"
+import AboutMeCard from "../components/aboutMeCard"
 
 const IndexPage = () => (
   <Layout>
@@ -25,6 +26,12 @@ const IndexPage = () => (
       <Row>
         <Col>
           <RoleCarousel />
+        </Col>
+      </Row>
+      <br />
+      <Row>
+        <Col>
+          <AboutMeCard />
         </Col>
       </Row>
     </Container>
