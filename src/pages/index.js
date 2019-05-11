@@ -12,7 +12,20 @@ const IndexPage = () => (
       <Row>
         <Col>
           {" "}
-          <h1>Hi, I'm Mohammed Ehab!</h1>
+          <h1>
+            Hi, I'm{" "}
+            <mark
+              style={{
+                backgroundColor: "black",
+                color: "white",
+                padding: "0.15em",
+                borderRadius: "10px 10px 10px 10px",
+              }}
+            >
+              Mohammed Ehab
+            </mark>
+            !
+          </h1>
         </Col>
       </Row>
       <br />
@@ -28,6 +41,7 @@ const IndexPage = () => (
           <RoleCarousel />
         </Col>
       </Row>
+      <br />
       <br />
       <Row>
         <Col>

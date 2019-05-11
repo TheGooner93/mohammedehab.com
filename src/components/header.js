@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import React from "react"
+import { FaBars } from "react-icons/fa"
 import Image from "../components/image"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: "linear-gradient(180deg, black 60%, white 40%)",
-      marginBottom: `1.45rem`,
+      background: "linear-gradient(180deg, black 60%, whitesmoke 40%)",
     }}
   >
     <div
@@ -17,6 +17,9 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <Image />
+    </div>
+    <div style={{ float: "right" }}>
+      <FaBars color="green" size="2em" />
     </div>
   </header>
 )
