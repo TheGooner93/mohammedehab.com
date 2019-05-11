@@ -15,14 +15,14 @@ const IndexPage = () => (
       </Row>
       <br />
       <Row>
-        <Col className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <Col>
           <div>
             <h2>I am a</h2>
           </div>
         </Col>
       </Row>
       <Row>
-        <Col style={{ paddingTop: "3px" }}>
+        <Col>
           <div
             style={{
               margin: "auto",
@@ -32,7 +32,7 @@ const IndexPage = () => (
               borderRadius: "10px",
             }}
           >
-            <Carousel controls="false" indicators="false" interval="3000">
+            <Carousel indicators={false} interval="3000">
               <CarouselItem>
                 <h3>developer</h3>
               </CarouselItem>
