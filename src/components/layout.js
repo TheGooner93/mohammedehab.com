@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+
 import "./layout.css"
 import "bootstrap/dist/css/bootstrap.css"
 
@@ -31,7 +32,7 @@ const Layout = ({ children }) => (
         <div
           style={{
             margin: `0 auto`,
-            padding: `0px 1.0875rem 10rem`,
+            padding: `1.5rem 1.0875rem 10rem`,
             background: "whitesmoke",
           }}
         >

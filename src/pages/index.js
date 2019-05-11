@@ -11,15 +11,14 @@ const IndexPage = () => (
     <Container style={{ textAlign: "center" }}>
       <Row>
         <Col>
-          {" "}
           <h1>
             Hi, I'm{" "}
             <mark
               style={{
-                backgroundColor: "black",
-                color: "white",
-                padding: "0.15em",
-                borderRadius: "10px 10px 10px 10px",
+                backgroundColor: "lightgrey",
+                color: "black",
+                padding: "0.25rem",
+                // borderRadius: "10px 10px 10px 10px",
               }}
             >
               Mohammed Ehab
