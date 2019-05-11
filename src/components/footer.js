@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa"
 import { FACEBOOK_URL, LINKEDIN_URL, GITHUB_URL } from "../utils/websites"
 
@@ -26,7 +26,7 @@ const Footer = () => {
           <a href={FACEBOOK_URL} style={{ color: "white" }}>
             <FaFacebookSquare size="1.3em" />
           </a>{" "}
-          <a href={FACEBOOK_URL} style={{ color: "white" }}>
+          <a href={LINKEDIN_URL} style={{ color: "white" }}>
             <FaLinkedin size="1.3em" />
           </a>{" "}
           <a href={GITHUB_URL}>

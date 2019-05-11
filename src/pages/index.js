@@ -1,7 +1,8 @@
 import React from "react"
-import { Carousel, CarouselItem, Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import RoleCarousel from "../components/roleCarousel"
 
 const IndexPage = () => (
   <Layout>
@@ -23,27 +24,7 @@ const IndexPage = () => (
       </Row>
       <Row>
         <Col>
-          <div
-            style={{
-              margin: "auto",
-              maxWidth: "300px",
-              color: "white",
-              background: "red",
-              borderRadius: "10px",
-            }}
-          >
-            <Carousel indicators={false} interval="3000">
-              <CarouselItem>
-                <h3>developer</h3>
-              </CarouselItem>
-              <CarouselItem>
-                <h3>photographer</h3>
-              </CarouselItem>
-              <CarouselItem>
-                <h3>gamer</h3>
-              </CarouselItem>
-            </Carousel>
-          </div>
+          <RoleCarousel />
         </Col>
       </Row>
     </Container>
