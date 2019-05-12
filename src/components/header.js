@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => {
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
         <Row>
-          <Col sm="8" md="8" lg="8" xl="8">
+          <Col sm="4" md="4" lg="4" xl="4">
             <div
               style={{
                 margin: "0.2rem 0.2rem 0.2rem 0.2rem",
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
               <LogoImage />
             </div>
           </Col>
-          <Col sm="4" md="4" lg="4" xl="4">
+          <Col sm="8" md="8" lg="8" xl="8">
             <Container>
               <Row>
                 {isDrawerOpen ? (
