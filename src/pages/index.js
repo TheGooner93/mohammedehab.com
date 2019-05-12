@@ -1,10 +1,10 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import RoleCarousel from "../components/roleCarousel"
-import AboutMeCard from "../components/aboutMeCard"
-import Image from "../components/image"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import RoleCarousel from "../components/RoleCarousel"
+import AboutMeCard from "../components/AboutMeCard"
+import ProfileImage from "../components/ProfileImage"
 
 const IndexPage = () => (
   <Layout>
@@ -18,7 +18,7 @@ const IndexPage = () => (
               maxWidth: 180,
             }}
           >
-            <Image />
+            <ProfileImage />
           </div>
         </Col>
       </Row>
