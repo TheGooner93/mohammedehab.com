@@ -4,11 +4,25 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RoleCarousel from "../components/roleCarousel"
 import AboutMeCard from "../components/aboutMeCard"
+import Image from "../components/image"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Container style={{ textAlign: "center" }}>
+      <Row>
+        <Col>
+          <div
+            style={{
+              margin: `0.5rem auto`,
+              maxWidth: 180,
+            }}
+          >
+            <Image />
+          </div>
+        </Col>
+      </Row>
+      <br />
       <Row>
         <Col>
           <h1>

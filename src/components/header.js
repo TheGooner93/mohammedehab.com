@@ -7,35 +7,27 @@ import Image from "../components/image"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: "linear-gradient(180deg, black 60%, whitesmoke 40%)",
+      height: "5rem",
+      background: "white",
     }}
   >
     <Container style={{ maxWidth: "100%" }}>
       <Row>
         <Col sm="4" md="4" lg="4" xl="4">
-          <div style={{ float: "right" }} />
+          <div style={{ float: "left" }} />
         </Col>
-        <Col sm="4" md="6" lg="4" xl="4">
-          <div
-            style={{
-              margin: `0 auto`,
-              minWidth: 180,
-              maxWidth: 180,
-              padding: `1.45rem 1.0875rem`,
-            }}
-          >
-            <Image />
-          </div>
+        <Col sm="4" md="4" lg="4" xl="4">
+          <div />
         </Col>
-        <Col sm="4" md="6" lg="4" xl="4">
+        <Col sm="4" md="4" lg="4" xl="4">
           <div
             style={{
               float: "right",
-              margin: `20px`,
-              padding: `1rem 1.0875rem`,
+              margin: `2px`,
+              padding: `1rem`,
             }}
           >
-            <Button variant="secondary">
+            <Button variant="dark">
               <FaBars color="white" size="2em" />
             </Button>
           </div>
