@@ -69,10 +69,13 @@ const Header = ({ siteTitle }) => {
                     }}
                   >
                     <Button
-                      variant="dark"
+                      variant={isDrawerOpen ? "dark" : "light"}
                       onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                     >
-                      <FaBars color="white" size="2em" />
+                      <FaBars
+                        color={isDrawerOpen ? "white" : "black"}
+                        size="2em"
+                      />
                     </Button>
                   </div>
                 </Col>
