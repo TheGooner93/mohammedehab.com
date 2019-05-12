@@ -18,7 +18,6 @@ const IndexPage = () => (
                 backgroundColor: "lightgrey",
                 color: "black",
                 padding: "0.25rem",
-                // borderRadius: "10px 10px 10px 10px",
               }}
             >
               Mohammed Ehab

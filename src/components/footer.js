@@ -10,14 +10,14 @@ const Footer = () => {
         position: "absolute",
         background: "black",
         width: "100%",
-        bottom: "0",
+        minHeight: "6rem",
+        bottom: 0,
       }}
     >
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 280,
-          padding: `1.45rem 1.0875rem`,
+          padding: `1.5rem 1.0875rem 1.5rem`,
           color: "white",
         }}
       >
