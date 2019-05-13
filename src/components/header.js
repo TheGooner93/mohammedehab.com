@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 import "../styles/header.css"
 
 const Header = ({ siteTitle }) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState({ isDrawerOpen: false })
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
     <header
       style={{
