@@ -18,9 +18,6 @@ const RoleCarousel = () => (
       <CarouselItem>
         <h3>photographer</h3>
       </CarouselItem>
-      <CarouselItem>
-        <h3>gamer</h3>
-      </CarouselItem>
     </Carousel>
   </div>
 )

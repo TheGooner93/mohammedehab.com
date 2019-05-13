@@ -13,6 +13,7 @@ const Header = ({ siteTitle }) => {
       style={{
         height: "5rem",
         background: "white",
+        borderBottom: "0.1rem solid #e9ecef",
       }}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
@@ -45,6 +46,18 @@ const Header = ({ siteTitle }) => {
                         }}
                       >
                         <span>
+                          <Link to="/about/">About</Link>
+                        </span>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div
+                        style={{
+                          float: "right",
+                          paddingTop: "1.5rem",
+                        }}
+                      >
+                        <span>
                           <Link to="/blog/">Blog</Link>
                         </span>
                       </div>
@@ -57,7 +70,7 @@ const Header = ({ siteTitle }) => {
                         }}
                       >
                         <span>
-                          <Link to="/experience/">Experience</Link>
+                          <Link to="/projects/">Projects</Link>
                         </span>
                       </div>
                     </Col>
