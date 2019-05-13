@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap"
 import { FaBars } from "react-icons/fa"
 import LogoImage from "./LogoImage"
 import { Link } from "gatsby"
+import "../styles/header.css"
 
 const Header = ({ siteTitle }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState({ isDrawerOpen: false })
@@ -18,6 +19,7 @@ const Header = ({ siteTitle }) => {
         <Row>
           <Col sm="4" md="4" lg="4" xl="4">
             <div
+              className="header-image-wrapper"
               style={{
                 margin: "0.2rem 0.2rem 0.2rem 0.2rem",
                 padding: "0.5rem",

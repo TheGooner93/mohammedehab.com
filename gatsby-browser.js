@@ -4,4 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+// import "bootstrap/dist/css/bootstrap.css"
+// import "./src/styles/header.css"
+
 // You can delete this file if you're not using it
