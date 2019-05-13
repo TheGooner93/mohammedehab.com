@@ -41,8 +41,7 @@ const Header = ({ siteTitle }) => {
                       <div
                         style={{
                           float: "right",
-                          padding: "1.5rem",
-                          maxWidth: "6rem",
+                          paddingTop: "1.5rem",
                         }}
                       >
                         <span>
@@ -54,7 +53,7 @@ const Header = ({ siteTitle }) => {
                       <div
                         style={{
                           float: "right",
-                          padding: "1.5rem",
+                          paddingTop: "1.5rem",
                         }}
                       >
                         <span>
