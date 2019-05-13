@@ -27,7 +27,9 @@ const Header = ({ siteTitle }) => {
                 height: "inherit",
               }}
             >
-              <LogoImage />
+              <Link to="/">
+                <LogoImage />
+              </Link>
             </div>
           </Col>
           <Col sm="8" md="8" lg="8" xl="8">
