@@ -3,3 +3,15 @@
     display: none;
   }
 }
+
+.header-item-opened {
+  transition: "all 1s ease";
+  transform: "translateX(1rem)";
+  right: 0;
+}
+
+.header-item-closed {
+  transition: "all 1s ease";
+  transform: "translateX(-1rem)";
+  left: 0;
+}

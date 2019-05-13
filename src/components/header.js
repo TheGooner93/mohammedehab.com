@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from "react-bootstrap"
 import { FaBars } from "react-icons/fa"
 import LogoImage from "./LogoImage"
 import { Link } from "gatsby"
+import classnames from "classnames"
 import "../styles/header.css"
 
 const Header = ({ siteTitle }) => {
@@ -38,10 +39,15 @@ const Header = ({ siteTitle }) => {
               <Row>
                 {isDrawerOpen ? (
                   <Fragment>
-                    <Col>
+                    <Col
+                      className={classnames({
+                        "header-item-opened": isDrawerOpen,
+                        "header-item-closed": !isDrawerOpen,
+                      })}
+                    >
                       <div
                         style={{
-                          float: "right",
+                          textAlign: "center",
                           paddingTop: "1.5rem",
                         }}
                       >
@@ -50,10 +56,15 @@ const Header = ({ siteTitle }) => {
                         </span>
                       </div>
                     </Col>
-                    <Col>
+                    <Col
+                      className={classnames({
+                        "header-item-opened": isDrawerOpen,
+                        "header-item-closed": !isDrawerOpen,
+                      })}
+                    >
                       <div
                         style={{
-                          float: "right",
+                          textAlign: "center",
                           paddingTop: "1.5rem",
                         }}
                       >
@@ -62,10 +73,15 @@ const Header = ({ siteTitle }) => {
                         </span>
                       </div>
                     </Col>
-                    <Col>
+                    <Col
+                      className={classnames({
+                        "header-item-opened": isDrawerOpen,
+                        "header-item-closed": !isDrawerOpen,
+                      })}
+                    >
                       <div
                         style={{
-                          float: "right",
+                          textAlign: "center",
                           paddingTop: "1.5rem",
                         }}
                       >
