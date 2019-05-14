@@ -1,0 +1,13 @@
+.blog-container {
+  text-align: center;
+}
+
+.blog-card-wrapper {
+  padding: 1rem 5rem 1rem 5rem;
+  cursor: pointer;
+  .blog-card {
+    padding: 0.2rem;
+    border-radius: 0.7rem;
+    background: rgba($color: #ebe4e4, $alpha: 0.3);
+  }
+}

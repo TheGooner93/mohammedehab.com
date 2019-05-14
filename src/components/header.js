@@ -69,7 +69,7 @@ const Header = ({ siteTitle }) => {
                         }}
                       >
                         <span>
-                          <Link to="/blog/">Blog</Link>
+                          <Link to="/blogs/">Blog</Link>
                         </span>
                       </div>
                     </Col>

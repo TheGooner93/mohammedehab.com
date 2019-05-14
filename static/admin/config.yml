@@ -1,0 +1,19 @@
+backend:
+  name: github
+  branch: master
+  repo: TheGooner93/mohammedehab
+publish_mode: editorial_workflow
+media_folder: static/blog_images
+public_folder: /blog_images
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: static/blog_posts
+    create: true
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    fields:
+      - { name: "date", label: "Publish Date", widget: "datetime" }
+      - { name: "title", label: "Title" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "thumbnail", label: "Featured Image", widget: "image" }
+      - { name: "body", label: "Body", widget: "markdown" }
