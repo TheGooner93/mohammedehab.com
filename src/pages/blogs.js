@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import { Container, Card, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/Layout"
@@ -9,7 +9,7 @@ import "../styles/blog.scss"
 
 const BlogPage = () => (
   <Layout>
-    <SEO title="Blog" />
+    <SEO title="Ehab's Blog" />
     <StaticQuery
       query={graphql`
         query allBlogPosts {
@@ -24,6 +24,9 @@ const BlogPage = () => (
                   date
                   description
                   thumbnail
+                }
+                fields {
+                  slug
                 }
               }
             }
@@ -41,21 +44,28 @@ const BlogPage = () => (
             <Row>
               <Col>
                 <div className="blog-card-wrapper" key={post.node.id}>
-                  <Card
-                    className="blog-card text-white"
-                    style={{
-                      backgroundImage: `url(${
-                        post.node.frontmatter.thumbnail
-                      })`,
-                    }}
+                  <Link
+                    to={post.node.fields.slug}
+                    style={{ textDecoration: "none" }}
                   >
-                    <Card.Body>
-                      <Card.Title>
-                        <h3>{post.node.frontmatter.title}</h3>
-                      </Card.Title>
-                      <Card.Text>{post.node.frontmatter.description}</Card.Text>
-                    </Card.Body>
-                  </Card>
+                    <Card
+                      className="blog-card text-white"
+                      style={{
+                        backgroundImage: `url(${
+                          post.node.frontmatter.thumbnail
+                        })`,
+                      }}
+                    >
+                      <Card.Body>
+                        <Card.Title>
+                          <h3>{post.node.frontmatter.title}</h3>
+                        </Card.Title>
+                        <Card.Text>
+                          {post.node.frontmatter.description}
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Link>
                 </div>
               </Col>
             </Row>
