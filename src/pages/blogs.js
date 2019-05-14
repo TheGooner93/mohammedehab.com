@@ -1,6 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Moment from "react-moment"
 import { Container, Card, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/Layout"
@@ -14,7 +13,9 @@ const BlogPage = () => (
     <StaticQuery
       query={graphql`
         query allBlogPosts {
-          allMarkdownRemark {
+          allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+          ) {
             edges {
               node {
                 id
