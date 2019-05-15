@@ -4,14 +4,16 @@
   }
 }
 
-.header-item-opened {
-  transition: "all 1s ease";
-  transform: "translateX(1rem)";
-  right: 0;
+.header-default {
+  height: 5rem;
+  background: white;
+  border-bottom: 0.1rem solid #e9ecef;
+  transition: height 0.2s;
 }
 
-.header-item-closed {
-  transition: "all 1s ease";
-  transform: "translateX(-1rem)";
-  left: 0;
+.header-expanded {
+  @extend .header-default;
+  background: whitesmoke;
+  transition: height 0.2s;
+  height: 9rem;
 }

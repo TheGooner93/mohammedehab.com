@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Carousel, CarouselItem } from "react-bootstrap"
 
 const RoleCarousel = () => (
@@ -6,17 +7,20 @@ const RoleCarousel = () => (
     style={{
       margin: "auto",
       maxWidth: "300px",
-      color: "white",
       background: "red",
       borderRadius: "10px",
     }}
   >
     <Carousel indicators={false} interval="3000">
       <CarouselItem>
-        <h3>developer</h3>
+        <Link to="/projects" style={{ color: "white", textDecoration: "none" }}>
+          <h3>developer</h3>
+        </Link>
       </CarouselItem>
       <CarouselItem>
-        <h3>photographer</h3>
+        <Link to="/blogs" style={{ color: "white", textDecoration: "none" }}>
+          <h3>photoblogger</h3>
+        </Link>
       </CarouselItem>
     </Carousel>
   </div>

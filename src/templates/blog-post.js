@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Container, Row, Col, Button } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -20,7 +20,11 @@ export default ({ data }) => {
         </Row>
         <Row>
           <Col>
-            <img src={post.frontmatter.thumbnail} style={{ maxWidth: "50%" }} />
+            <img
+              src={post.frontmatter.thumbnail}
+              style={{ maxWidth: "50%" }}
+              alt={post.frontmatter.title}
+            />
           </Col>
         </Row>
         <Row>

@@ -9,7 +9,7 @@ import "../styles/blog.scss"
 
 const BlogPage = () => (
   <Layout>
-    <SEO title="Ehab's Blog" />
+    <SEO title="Blog" />
     <StaticQuery
       query={graphql`
         query allBlogPosts {
@@ -41,9 +41,9 @@ const BlogPage = () => (
             </Col>
           </Row>
           {data.allMarkdownRemark.edges.map(post => (
-            <Row>
+            <Row key={post.node.id}>
               <Col>
-                <div className="blog-card-wrapper" key={post.node.id}>
+                <div className="blog-card-wrapper">
                   <Link
                     to={post.node.fields.slug}
                     style={{ textDecoration: "none" }}

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React, { useState, Fragment } from "react"
+import React, { useState } from "react"
 import { Button, Container, Row, Col } from "react-bootstrap"
 import { FaBars } from "react-icons/fa"
 import LogoImage from "./LogoImage"
@@ -11,15 +11,14 @@ const Header = ({ siteTitle }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
     <header
-      style={{
-        height: "5rem",
-        background: "white",
-        borderBottom: "0.1rem solid #e9ecef",
-      }}
+      className={classnames({
+        "header-default": !isDrawerOpen,
+        "header-expanded": isDrawerOpen,
+      })}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
         <Row>
-          <Col sm="4" md="4" lg="4" xl="4">
+          <Col sm="6" md="6" lg="6" xl="6">
             <div
               className="header-image-wrapper"
               style={{
@@ -34,70 +33,15 @@ const Header = ({ siteTitle }) => {
               </Link>
             </div>
           </Col>
-          <Col sm="8" md="8" lg="8" xl="8">
+          <Col sm="6" md="6" lg="6" xl="6">
             <Container>
               <Row>
-                {isDrawerOpen ? (
-                  <Fragment>
-                    <Col
-                      className={classnames({
-                        "header-item-opened": isDrawerOpen,
-                        "header-item-closed": !isDrawerOpen,
-                      })}
-                    >
-                      <div
-                        style={{
-                          textAlign: "center",
-                          paddingTop: "1.5rem",
-                        }}
-                      >
-                        <span>
-                          <Link to="/about/">About</Link>
-                        </span>
-                      </div>
-                    </Col>
-                    <Col
-                      className={classnames({
-                        "header-item-opened": isDrawerOpen,
-                        "header-item-closed": !isDrawerOpen,
-                      })}
-                    >
-                      <div
-                        style={{
-                          textAlign: "center",
-                          paddingTop: "1.5rem",
-                        }}
-                      >
-                        <span>
-                          <Link to="/blogs/">Blog</Link>
-                        </span>
-                      </div>
-                    </Col>
-                    <Col
-                      className={classnames({
-                        "header-item-opened": isDrawerOpen,
-                        "header-item-closed": !isDrawerOpen,
-                      })}
-                    >
-                      <div
-                        style={{
-                          textAlign: "center",
-                          paddingTop: "1.5rem",
-                        }}
-                      >
-                        <span>
-                          <Link to="/projects/">Projects</Link>
-                        </span>
-                      </div>
-                    </Col>
-                  </Fragment>
-                ) : null}
                 <Col>
                   <div
                     style={{
                       float: "right",
-                      margin: "0.2rem 0.2rem 0.2rem 0.2rem",
-                      padding: `0.7rem`,
+                      margin: "0.4rem 0rem 0.1rem 0.1rem",
+                      padding: `0.5rem`,
                     }}
                   >
                     <Button
@@ -115,6 +59,40 @@ const Header = ({ siteTitle }) => {
             </Container>
           </Col>
         </Row>
+        {isDrawerOpen ? (
+          <Row>
+            <Col>
+              <div
+                style={{
+                  textAlign: "center",
+                  paddingTop: "1.5rem",
+                }}
+              >
+                <Link to="/">About</Link>
+              </div>
+            </Col>
+            <Col>
+              <div
+                style={{
+                  textAlign: "center",
+                  paddingTop: "1.5rem",
+                }}
+              >
+                <Link to="/blogs/">Blog</Link>
+              </div>
+            </Col>
+            <Col>
+              <div
+                style={{
+                  textAlign: "center",
+                  paddingTop: "1.5rem",
+                }}
+              >
+                <Link to="/projects/">Projects</Link>
+              </div>
+            </Col>
+          </Row>
+        ) : null}
       </Container>
     </header>
   )
