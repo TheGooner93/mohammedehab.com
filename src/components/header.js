@@ -77,6 +77,11 @@ const Header = ({ siteTitle }) => {
                 <Link to="/projects/">Projects</Link>
               </div>
             </Col>
+            <Col>
+              <div className="drawer-cell">
+                <Link to="/resume/">Resume</Link>
+              </div>
+            </Col>
           </Row>
         ) : null}
       </Container>

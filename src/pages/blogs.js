@@ -15,6 +15,7 @@ const BlogPage = () => (
         query allBlogPosts {
           allMarkdownRemark(
             sort: { fields: [frontmatter___date], order: DESC }
+            limit: 5
           ) {
             edges {
               node {
