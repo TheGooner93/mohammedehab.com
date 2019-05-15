@@ -5,7 +5,8 @@ import { FaBars } from "react-icons/fa"
 import LogoImage from "./LogoImage"
 import { Link } from "gatsby"
 import classnames from "classnames"
-import "../styles/header.css"
+
+import "../styles/header.scss"
 
 const Header = ({ siteTitle }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -60,34 +61,19 @@ const Header = ({ siteTitle }) => {
           </Col>
         </Row>
         {isDrawerOpen ? (
-          <Row>
+          <Row className="row-header-expanded">
             <Col>
-              <div
-                style={{
-                  textAlign: "center",
-                  paddingTop: "1.5rem",
-                }}
-              >
-                <Link to="/">About</Link>
+              <div className="drawer-cell">
+                <Link to="/">Home</Link>
               </div>
             </Col>
             <Col>
-              <div
-                style={{
-                  textAlign: "center",
-                  paddingTop: "1.5rem",
-                }}
-              >
+              <div className="drawer-cell">
                 <Link to="/blogs/">Blog</Link>
               </div>
             </Col>
             <Col>
-              <div
-                style={{
-                  textAlign: "center",
-                  paddingTop: "1.5rem",
-                }}
-              >
+              <div className="drawer-cell">
                 <Link to="/projects/">Projects</Link>
               </div>
             </Col>

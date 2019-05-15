@@ -1,0 +1,36 @@
+@media screen and (max-width: 575px) {
+  .header-image-wrapper {
+    display: none;
+  }
+}
+
+.header-default {
+  height: 5rem;
+  background: white;
+  border-bottom: 0.1rem solid #e9ecef;
+  transition: height 0.2s ease;
+}
+
+.header-expanded {
+  @extend .header-default;
+  height: 9rem;
+  transition: height 0.2s ease-in;
+}
+
+.drawer-cell {
+  color: black;
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.row-header-expanded {
+  background: black;
+}
