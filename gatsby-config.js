@@ -7,6 +7,11 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-offline`, // this (optional) plugin enables Progressive Web App + Offline functionality, // To learn more,                               visit: https://gatsby.dev/offline
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,9 +26,6 @@ module.exports = {
         path: `${__dirname}/static/blog_posts`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -36,7 +38,30 @@ module.exports = {
         icon: `src/images/LogoTN.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-offline`, // this (optional) plugin enables Progressive Web App + Offline functionality, // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: "gatsby-source-github-api",
+      options: {
+        //token required by Github API
+        token: process.env.TOKEN,
+        graphQLQuery: `
+        query GetGHRepos($user: String!){ 
+          user(login:$user) {
+            name
+            pinnedRepositories(first:10) {    
+              edges {
+                node {
+                  id
+                  name
+                  description
+                  url
+                  homepageUrl
+                }
+              }
+            }
+          }
+        }`,
+        variables: { user: "TheGooner93" },
+      },
+    },
   ],
 }
