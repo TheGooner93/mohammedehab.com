@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Button } from "react-bootstrap"
+import Moment from "react-moment"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -13,16 +14,15 @@ export default ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <Container style={{ textAlign: "center" }}>
         <Row>
-          <Link to="/blogs" style={{ color: "black" }}>
-            Back
+          <Link to="/blogs" style={{ color: "black", float: "left" }}>
+            <Button variant="info">Back to Blogs</Button>
           </Link>
-          <hr />
         </Row>
         <Row>
           <Col>
             <img
               src={post.frontmatter.thumbnail}
-              style={{ maxWidth: "50%" }}
+              style={{ margin: "1rem", maxWidth: "50%" }}
               alt={post.frontmatter.title}
             />
           </Col>
@@ -34,7 +34,12 @@ export default ({ data }) => {
         </Row>
         <Row>
           <Col>
-            <h4>Posted on {post.frontmatter.date}</h4>
+            <h5>
+              Posted on{" "}
+              <Moment format="DD MMM YYYY, hh:mm A">
+                {post.frontmatter.date}
+              </Moment>
+            </h5>
           </Col>
         </Row>
         <Row>
