@@ -53,7 +53,7 @@ module.exports = {
       resolve: `gatsby-source-github-api`,
       options: {
         //token required by Github API
-        token: "29d4b0d9097bb7c0885d747a98bc878017e602ce",
+        token: process.env.GH_API_TOKEN,
         graphQLQuery: `
         query GetGHRepos($user: String!){ 
           user(login:$user) {
