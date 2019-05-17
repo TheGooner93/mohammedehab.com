@@ -74,6 +74,13 @@ module.exports = {
         }`,
         variables: { user: `TheGooner93` }
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-140382357-1`,
+        respectDNT: true
+      }
     }
   ]
 };

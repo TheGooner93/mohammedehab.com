@@ -5,6 +5,7 @@ import { FaBars } from "react-icons/fa";
 import LogoImage from "./LogoImage";
 import { Link, StaticQuery, graphql } from "gatsby";
 import classnames from "classnames";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 import "../styles/header.scss";
 
@@ -93,7 +94,7 @@ const Header = ({ siteTitle }) => {
                 render={data => {
                   return (
                     <div className="drawer-cell">
-                      <a
+                      <OutboundLink
                         href={
                           data &&
                           data.resumeLink &&
@@ -104,7 +105,7 @@ const Header = ({ siteTitle }) => {
                         }
                       >
                         Resume
-                      </a>
+                      </OutboundLink>
                     </div>
                   );
                 }}
