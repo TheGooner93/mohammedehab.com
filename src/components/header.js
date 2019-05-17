@@ -80,7 +80,7 @@ const Header = ({ siteTitle }) => {
             <Col>
               <StaticQuery
                 query={graphql`
-                  query getResumeLink {
+                  {
                     resumeLink: allFile(filter: { extension: { eq: "pdf" } }) {
                       edges {
                         node {
@@ -102,7 +102,6 @@ const Header = ({ siteTitle }) => {
                           data.resumeLink.edges[0].node &&
                           data.resumeLink.edges[0].node.publicURL
                         }
-                        download
                       >
                         Resume
                       </a>
