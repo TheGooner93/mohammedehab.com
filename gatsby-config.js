@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mohammed Ehab's Website`,
+    title: `Mohammed Ehab`,
     description: `Portfolio, photoblog and other jazz, courtesy of yours truly.`,
     author: `@TheGooner93`
   },
@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Mohammed Ehab's Website`,
+        name: `Mohammed Ehab`,
         short_name: `ME`,
         start_url: `/`,
         background_color: `white`,
