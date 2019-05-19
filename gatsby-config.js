@@ -39,7 +39,7 @@ module.exports = {
         name: `Mohammed Ehab's Website`,
         short_name: `ME`,
         start_url: `/`,
-        background_color: `black`,
+        background_color: `white`,
         theme_color: `black`,
         display: `minimal-ui`,
         icon: `src/images/ThickBorderLogo.png` // This path is relative to the root of the site.
