@@ -1,10 +1,10 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import RoleCarousel from "../components/RoleCarousel"
-import AboutMeCard from "../components/AboutMeCard"
-import ProfileImage from "../components/ProfileImage"
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
+import RoleCarousel from "../components/RoleCarousel";
+import AboutMeCard from "../components/AboutMeCard";
+import ProfileImage from "../components/ProfileImage";
 
 const IndexPage = () => (
   <Layout>
@@ -15,7 +15,7 @@ const IndexPage = () => (
           <div
             style={{
               margin: `0.5rem auto`,
-              maxWidth: 180,
+              maxWidth: 180
             }}
           >
             <ProfileImage />
@@ -29,9 +29,11 @@ const IndexPage = () => (
             Hi, I'm{" "}
             <mark
               style={{
+                boxDecorationBreak: "clone",
+                WebkitBoxDecorationBreak: "clone",
                 backgroundColor: "lightgrey",
                 color: "black",
-                padding: "0.25rem",
+                padding: "0.25rem"
               }}
             >
               Mohammed Ehab
@@ -62,6 +64,6 @@ const IndexPage = () => (
       </Row>
     </Container>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

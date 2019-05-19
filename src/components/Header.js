@@ -20,14 +20,13 @@ const Header = ({ siteTitle }) => {
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
         <Row>
-          <Col sm="6" md="6" lg="6" xl="6">
+          <Col xs="6" sm="6" md="6" lg="6" xl="6">
             <div
               className="header-image-wrapper"
               style={{
                 margin: "0.2rem 0.2rem 0.2rem 0.2rem",
                 padding: "0.5rem",
-                maxWidth: 140,
-                height: "inherit"
+                maxWidth: 140
               }}
             >
               <Link to="/">
@@ -35,14 +34,14 @@ const Header = ({ siteTitle }) => {
               </Link>
             </div>
           </Col>
-          <Col sm="6" md="6" lg="6" xl="6">
+          <Col xs="6" sm="6" md="6" lg="6" xl="6">
             <Container>
               <Row>
                 <Col>
                   <div
                     style={{
                       float: "right",
-                      margin: "0.4rem 0rem 0.1rem 0.1rem",
+                      margin: "0.5rem 0rem 0.1rem 0.1rem",
                       padding: `0.5rem`
                     }}
                   >
@@ -63,22 +62,22 @@ const Header = ({ siteTitle }) => {
         </Row>
         {isDrawerOpen ? (
           <Row className="row-header-expanded">
-            <Col>
+            <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <div className="drawer-cell">
                 <Link to="/">Home</Link>
               </div>
             </Col>
-            <Col>
+            <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <div className="drawer-cell">
                 <Link to="/blogs/">Blog</Link>
               </div>
             </Col>
-            <Col>
+            <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <div className="drawer-cell">
                 <Link to="/projects/">Projects</Link>
               </div>
             </Col>
-            <Col>
+            <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <StaticQuery
                 query={graphql`
                   {

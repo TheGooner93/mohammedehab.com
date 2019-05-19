@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.development`
-});
-
 module.exports = {
   siteMetadata: {
     title: `Mohammed Ehab's Website`,
@@ -81,5 +77,11 @@ module.exports = {
         respectDNT: true
       }
     }
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`
+    //   }
+    // }
   ]
 };

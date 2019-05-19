@@ -1,7 +1,4 @@
-@media screen and (max-width: 575px) {
-  .header-image-wrapper {
-    display: none;
-  }
+.header-image-wrapper {
 }
 
 .header-default {
@@ -15,6 +12,9 @@
   @extend .header-default;
   height: 9rem;
   transition: height 0.2s ease-in;
+  @media screen and (max-width: 575px) {
+    height: 13rem;
+  }
 }
 
 .drawer-cell {
@@ -22,7 +22,8 @@
   text-align: center;
   margin-top: 0.75rem;
   margin-bottom: 1rem;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   a {
     cursor: pointer;
     color: white;
