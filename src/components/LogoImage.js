@@ -19,7 +19,7 @@ const LogoImage = () => (
       {
         placeholderImage: file(relativePath: { eq: "EhabLogoNoShadow.png" }) {
           childImageSharp {
-            fluid(maxWidth: 140) {
+            fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
             }
           }
