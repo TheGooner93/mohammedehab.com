@@ -1,15 +1,20 @@
-import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-import { Container, Card, Row, Col } from "react-bootstrap"
+import React from "react";
+import { StaticQuery, graphql, Link } from "gatsby";
+import { Container, Card, Row, Col } from "react-bootstrap";
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
-import "../styles/blog.scss"
+import "../styles/blog.scss";
 
 const BlogPage = () => (
   <Layout>
-    <SEO title="Blog" />
+    <SEO
+      title="Blog"
+      lang="en"
+      keywords={[`Mohammed`, `Ehab`, `blog`, `photoblog`, `feed`]}
+      description="Mohammed Ehab's Photoblog"
+    />
     <StaticQuery
       query={graphql`
         query allBlogPosts {
@@ -54,7 +59,7 @@ const BlogPage = () => (
                       style={{
                         backgroundImage: `url(${
                           post.node.frontmatter.thumbnail
-                        })`,
+                        })`
                       }}
                     >
                       <Card.Body>
@@ -75,6 +80,6 @@ const BlogPage = () => (
       )}
     />
   </Layout>
-)
+);
 
-export default BlogPage
+export default BlogPage;

@@ -1,13 +1,13 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { Container, Row, Col, Button } from "react-bootstrap"
-import Moment from "react-moment"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import Moment from "react-moment";
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 export default ({ data }) => {
-  const post = data && data.markdownRemark
+  const post = data && data.markdownRemark;
 
   return (
     <Layout>
@@ -15,7 +15,9 @@ export default ({ data }) => {
       <Container style={{ textAlign: "center" }}>
         <Row>
           <Link to="/blogs" style={{ color: "black", float: "left" }}>
-            <Button variant="info">Back to Blogs</Button>
+            <Button variant="info" aria-label="Back to blogs">
+              Back to Blogs
+            </Button>
           </Link>
         </Row>
         <Row>
@@ -49,8 +51,8 @@ export default ({ data }) => {
         </Row>
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
 export const blogPostQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -64,4 +66,4 @@ export const blogPostQuery = graphql`
       }
     }
   }
-`
+`;

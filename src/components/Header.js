@@ -48,6 +48,7 @@ const Header = ({ siteTitle }) => {
                     <Button
                       variant={isDrawerOpen ? "dark" : "light"}
                       onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                      aria-label="Open drawer"
                     >
                       <FaBars
                         color={isDrawerOpen ? "white" : "black"}

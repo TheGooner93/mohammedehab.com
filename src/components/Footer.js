@@ -23,13 +23,21 @@ const Footer = () => {
       >
         <div>© {new Date().getFullYear()} | Mohammed Ehab</div>
         <div>
-          <a href={FACEBOOK_URL} style={{ color: "white" }}>
+          <a
+            href={FACEBOOK_URL}
+            style={{ color: "white" }}
+            aria-label="Facebook"
+          >
             <FaFacebookSquare size="1.3em" />
           </a>{" "}
-          <a href={LINKEDIN_URL} style={{ color: "white" }}>
+          <a
+            href={LINKEDIN_URL}
+            style={{ color: "white" }}
+            aria-label="LinkedIn"
+          >
             <FaLinkedin size="1.3em" />
           </a>{" "}
-          <a href={GITHUB_URL}>
+          <a href={GITHUB_URL} aria-label="Github">
             <FaGithubSquare size="1.3em" style={{ color: "white" }} />
           </a>
         </div>

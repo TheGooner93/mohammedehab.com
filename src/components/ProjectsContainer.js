@@ -1,6 +1,6 @@
-import React from "react"
-import { Card, Container, Row, Col, Button } from "react-bootstrap"
-import { StaticQuery, graphql } from "gatsby"
+import React from "react";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
+import { StaticQuery, graphql } from "gatsby";
 
 const ProjectsContainer = () => (
   <StaticQuery
@@ -36,8 +36,10 @@ const ProjectsContainer = () => (
                   <Card.Header>{repo.node.name}</Card.Header>
                   <Card.Body>
                     <Card.Text>{repo.node.description}</Card.Text>
-                    <a href={repo.node.homepageUrl}>
-                      <Button variant="primary">Visit Live App</Button>
+                    <a href={repo.node.homepageUrl} aria-label="Visit Live App">
+                      <Button variant="primary" aria-label="Visit live app">
+                        Visit Live App
+                      </Button>
                     </a>
                   </Card.Body>
                 </Card>
@@ -48,6 +50,6 @@ const ProjectsContainer = () => (
       </Container>
     )}
   />
-)
+);
 
-export default ProjectsContainer
+export default ProjectsContainer;

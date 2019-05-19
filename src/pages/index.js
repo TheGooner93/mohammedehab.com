@@ -8,7 +8,12 @@ import ProfileImage from "../components/ProfileImage";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Home"
+      lang="en"
+      keywords={[`gatsby`, `application`, `react`]}
+      description="Mohammed Ehab's Website"
+    />
     <Container style={{ textAlign: "center" }}>
       <Row>
         <Col>
