@@ -18,18 +18,19 @@
 }
 
 .drawer-cell {
-  color: black;
+  color: white;
   text-align: center;
   margin-top: 0.75rem;
   margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  a {
+  &:hover {
+    border-radius: 0.4rem;
     cursor: pointer;
-    color: white;
-    &:hover {
-      color: white;
-    }
+    color: black;
+    background: white;
   }
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import { StaticQuery, graphql } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const ProjectsContainer = () => (
   <StaticQuery
@@ -38,17 +39,26 @@ const ProjectsContainer = () => (
               xl="4"
               className="project-card-wrapper"
             >
-              <Card>
-                <Card.Header>{repo.node.name}</Card.Header>
-                <Card.Body>
-                  <Card.Text>{repo.node.description}</Card.Text>
-                  <a href={repo.node.homepageUrl} aria-label="Visit Live App">
-                    <Button variant="primary" aria-label="Visit live app">
-                      Visit Live App
-                    </Button>
-                  </a>
-                </Card.Body>
-              </Card>
+              <OutboundLink href={repo.node.homepageUrl}>
+                <Card text="white" className="project-card">
+                  <Card.Body>
+                    <Card.Title>
+                      <i>
+                        <strong>{repo.node.name}</strong>
+                      </i>
+                    </Card.Title>
+                    <Card.Text>{repo.node.description}</Card.Text>
+                    {/* <Card.Link
+                    href={repo.node.homepageUrl}
+                    aria-label="Visit Live App"
+                  > */}
+                    {/* <Button variant="primary" aria-label="Visit live app"> */}
+                    {/* Visit Live App */}
+                    {/* </Button> */}
+                    {/* </Card.Link> */}
+                  </Card.Body>
+                </Card>
+              </OutboundLink>
             </Col>
           ))}
         </Row>

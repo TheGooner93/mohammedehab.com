@@ -17,3 +17,12 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
+a {
+  cursor: pointer;
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}

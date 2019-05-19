@@ -8,3 +8,21 @@
     padding: 2rem 2rem 2rem 2rem;
   }
 }
+
+.project-card {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.8rem;
+  background: linear-gradient(
+    135deg,
+    rgba(38, 65, 143, 1) 0%,
+    rgba(92, 107, 192, 1) 100%
+  );
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
+    webkit-box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
+    -moz-box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
+  }
+}

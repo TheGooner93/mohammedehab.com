@@ -64,19 +64,21 @@ const Header = ({ siteTitle }) => {
         {isDrawerOpen ? (
           <Row className="row-header-expanded">
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <div className="drawer-cell">
-                <Link to="/">Home</Link>
-              </div>
+              <Link to="/">
+                {" "}
+                <div className="drawer-cell">Home</div>
+              </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <div className="drawer-cell">
-                <Link to="/blogs/">Blog</Link>
-              </div>
+              <Link to="/blogs/">
+                <div className="drawer-cell">Blog </div>
+              </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <div className="drawer-cell">
-                <Link to="/projects/">Projects</Link>
-              </div>
+              <Link to="/projects/">
+                {" "}
+                <div className="drawer-cell">Projects</div>
+              </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <StaticQuery
@@ -93,20 +95,18 @@ const Header = ({ siteTitle }) => {
                 `}
                 render={data => {
                   return (
-                    <div className="drawer-cell">
-                      <OutboundLink
-                        href={
-                          data &&
-                          data.resumeLink &&
-                          data.resumeLink.edges &&
-                          data.resumeLink.edges[0] &&
-                          data.resumeLink.edges[0].node &&
-                          data.resumeLink.edges[0].node.publicURL
-                        }
-                      >
-                        Resume
-                      </OutboundLink>
-                    </div>
+                    <OutboundLink
+                      href={
+                        data &&
+                        data.resumeLink &&
+                        data.resumeLink.edges &&
+                        data.resumeLink.edges[0] &&
+                        data.resumeLink.edges[0].node &&
+                        data.resumeLink.edges[0].node.publicURL
+                      }
+                    >
+                      <div className="drawer-cell">Resume</div>
+                    </OutboundLink>
                   );
                 }}
               />
