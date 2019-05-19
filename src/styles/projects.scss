@@ -3,8 +3,8 @@
 }
 
 .project-card-wrapper {
-  padding: 1rem 5rem 1rem 5rem;
-  .project-card {
-    padding: "0.5rem";
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  @media (min-width: 1200px) {
+    padding: 2rem 2rem 2rem 2rem;
   }
 }

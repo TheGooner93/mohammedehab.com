@@ -27,23 +27,28 @@ const ProjectsContainer = () => (
       }
     `}
     render={data => (
-      <Container className="project-card-wrapper">
+      <Container>
         <Row>
           {data.githubData.data.user.pinnedRepositories.edges.map(repo => (
-            <Col xs="12" sm="12" md="6" lg="4" xl="4">
-              <div className="project-card">
-                <Card>
-                  <Card.Header>{repo.node.name}</Card.Header>
-                  <Card.Body>
-                    <Card.Text>{repo.node.description}</Card.Text>
-                    <a href={repo.node.homepageUrl} aria-label="Visit Live App">
-                      <Button variant="primary" aria-label="Visit live app">
-                        Visit Live App
-                      </Button>
-                    </a>
-                  </Card.Body>
-                </Card>
-              </div>
+            <Col
+              xs="12"
+              sm="12"
+              md="6"
+              lg="4"
+              xl="4"
+              className="project-card-wrapper"
+            >
+              <Card>
+                <Card.Header>{repo.node.name}</Card.Header>
+                <Card.Body>
+                  <Card.Text>{repo.node.description}</Card.Text>
+                  <a href={repo.node.homepageUrl} aria-label="Visit Live App">
+                    <Button variant="primary" aria-label="Visit live app">
+                      Visit Live App
+                    </Button>
+                  </a>
+                </Card.Body>
+              </Card>
             </Col>
           ))}
         </Row>
