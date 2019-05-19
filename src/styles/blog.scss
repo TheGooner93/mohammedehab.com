@@ -4,11 +4,15 @@
 
 .blog-card-wrapper {
   padding: 1rem 5rem 1rem 5rem;
+  @media (max-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
   cursor: pointer;
   .blog-card {
     position: relative;
     padding: 0.2rem;
-    border: 0px;
+    border: none;
     border-radius: 0.7rem;
     transition: all 0.2s ease-in-out;
     &:hover {

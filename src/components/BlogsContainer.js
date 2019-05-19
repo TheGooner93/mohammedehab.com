@@ -31,7 +31,7 @@ const BlogsContainer = () => (
       <Container>
         {data.allMarkdownRemark.edges.map(post => (
           <Row key={post.node.id}>
-            <Col>
+            <Col xs="12" sm="12" md="12" lg="12" xl="12">
               <div className="blog-card-wrapper">
                 <Link
                   to={post.node.fields.slug}
