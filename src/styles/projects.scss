@@ -1,9 +1,10 @@
 .projects-container {
-  margin: "2rem";
-
   text-align: center;
 }
 
 .project-card-wrapper {
   padding: 1rem 5rem 1rem 5rem;
+  .project-card {
+    padding: "0.5rem";
+  }
 }
