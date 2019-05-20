@@ -76,12 +76,12 @@ module.exports = {
         trackingId: `UA-140382357-1`,
         respectDNT: true
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["Poppins:300,400,400i,700", `source sans pro\:300,400,400i,700`]
+      }
     }
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`
-    //   }
-    // }
   ]
 };
