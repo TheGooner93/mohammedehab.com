@@ -38,14 +38,13 @@ const ProjectsContainer = () => (
               lg="4"
               xl="4"
               className="project-card-wrapper"
+              key={repo.node.id}
             >
               <OutboundLink href={repo.node.homepageUrl}>
                 <Card text="white" className="project-card">
                   <Card.Body>
                     <Card.Title>
-                      <i>
-                        <strong>{repo.node.name}</strong>
-                      </i>
+                      <strong>{repo.node.name}</strong>
                     </Card.Title>
                     <Card.Text>{repo.node.description}</Card.Text>
                     {/* <Card.Link

@@ -22,6 +22,11 @@ const BlogPage = () => (
         </Col>
       </Row>
       <Row>
+        <Col>
+          <hr />
+        </Col>
+      </Row>
+      <Row>
         <BlogsContainer />
       </Row>
     </Container>

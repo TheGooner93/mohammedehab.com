@@ -24,6 +24,11 @@ const ProjectsPage = () => {
         </Row>
         <Row>
           <Col>
+            <hr />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <ProjectsContainer />
           </Col>
         </Row>
