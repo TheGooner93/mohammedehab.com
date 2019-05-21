@@ -14,17 +14,10 @@ export default ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <Container style={{ textAlign: "center" }}>
         <Row>
-          <Link to="/blogs" style={{ color: "black", float: "left" }}>
-            <Button variant="info" aria-label="Back to blogs">
-              Back to Blogs
-            </Button>
-          </Link>
-        </Row>
-        <Row>
           <Col>
             <img
               src={post.frontmatter.thumbnail}
-              style={{ margin: "1rem", maxWidth: "50%" }}
+              style={{ margin: "1rem", maxWidth: "75%" }}
               alt={post.frontmatter.title}
             />
           </Col>
@@ -47,6 +40,15 @@ export default ({ data }) => {
         <Row>
           <Col>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="12" sm="12" md="12" lg="12" xl="12">
+            <Link to="/blogs">
+              <Button variant="info" aria-label="Back to blogs">
+                Back to Blogs
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Container>
