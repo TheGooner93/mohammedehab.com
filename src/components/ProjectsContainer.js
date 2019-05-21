@@ -27,42 +27,49 @@ const ProjectsContainer = () => (
         }
       }
     `}
-    render={data => (
-      <Container>
-        <Row>
-          {data.githubData.data.user.pinnedRepositories.edges.map(repo => (
-            <Col
-              xs="12"
-              sm="12"
-              md="6"
-              lg="4"
-              xl="4"
-              className="project-card-wrapper"
-              key={repo.node.id}
-            >
-              <OutboundLink href={repo.node.homepageUrl}>
-                <Card text="white" className="project-card">
-                  <Card.Body>
-                    <Card.Title>
-                      <strong>{repo.node.name}</strong>
-                    </Card.Title>
-                    <Card.Text>{repo.node.description}</Card.Text>
-                    {/* <Card.Link
-                    href={repo.node.homepageUrl}
-                    aria-label="Visit Live App"
-                  > */}
-                    {/* <Button variant="primary" aria-label="Visit live app"> */}
-                    {/* Visit Live App */}
-                    {/* </Button> */}
-                    {/* </Card.Link> */}
-                  </Card.Body>
-                </Card>
-              </OutboundLink>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-    )}
+    render={data => {
+      const pinnedRepos =
+        data &&
+        data.githubData &&
+        data.githubData.data &&
+        data.githubData.data.user.pinnedRepositories &&
+        data.githubData.data.user.pinnedRepositories.edges;
+
+      return (
+        <Container>
+          <Row>
+            {pinnedRepos.length ? (
+              pinnedRepos.map(pinnedRepo => (
+                <Col
+                  xs="12"
+                  sm="12"
+                  md="6"
+                  lg="4"
+                  xl="4"
+                  className="project-card-wrapper"
+                  key={pinnedRepo.node.id}
+                >
+                  <OutboundLink href={pinnedRepo.node.homepageUrl}>
+                    <Card text="white" className="project-card">
+                      <Card.Body>
+                        <Card.Title>
+                          <strong>{pinnedRepo.node.name}</strong>
+                        </Card.Title>
+                        <Card.Text>{pinnedRepo.node.description}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </OutboundLink>
+                </Col>
+              ))
+            ) : (
+              <Col xs="12" sm="12" md="12" lg="12" xl="12">
+                <div className="project-empty">No projects available</div>
+              </Col>
+            )}
+          </Row>
+        </Container>
+      );
+    }}
   />
 );
 

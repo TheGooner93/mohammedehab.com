@@ -66,18 +66,33 @@ const Header = ({ siteTitle }) => {
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <Link to="/">
                 {" "}
-                <div className="drawer-cell">Home</div>
+                <div
+                  className="drawer-cell"
+                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                >
+                  Home
+                </div>
               </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <Link to="/blogs/">
-                <div className="drawer-cell">Blog </div>
+                <div
+                  className="drawer-cell"
+                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                >
+                  Blog
+                </div>
               </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <Link to="/projects/">
                 {" "}
-                <div className="drawer-cell">Projects</div>
+                <div
+                  className="drawer-cell"
+                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                >
+                  Projects
+                </div>
               </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
@@ -105,7 +120,12 @@ const Header = ({ siteTitle }) => {
                         data.resumeLink.edges[0].node.publicURL
                       }
                     >
-                      <div className="drawer-cell">Resume</div>
+                      <div
+                        className="drawer-cell"
+                        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                      >
+                        Resume
+                      </div>
                     </OutboundLink>
                   );
                 }}
