@@ -3,8 +3,8 @@ backend:
   branch: master
   repo: TheGooner93/mohammedehab
 publish_mode: editorial_workflow
-# media_folder: static/blog_images
-# public_folder: /blog_images
+media_folder: static/blog_images
+public_folder: /blog_images
 collections:
   - name: "blog"
     label: "Blog"
@@ -15,5 +15,5 @@ collections:
       - { name: "date", label: "Publish Date", widget: "datetime" }
       - { name: "title", label: "Title" }
       - { name: "description", label: "Description", widget: "text" }
-      - { name: "remoteImage", label: "Link to Image", widget: "string" }
+      - { name: "thumbnail", label: "Blog Image", widget: "image" }
       - { name: "body", label: "Body", widget: "markdown", optional: true }

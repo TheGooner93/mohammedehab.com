@@ -20,7 +20,6 @@
     "gatsby-source-filesystem": "^2.0.33",
     "gatsby-source-github-api": "^0.1.0",
     "gatsby-transformer-remark": "^2.3.12",
-    "gatsby-transformer-remote-image": "^2.0.1",
     "gatsby-transformer-sharp": "^2.1.19",
     "moment": "^2.24.0",
     "netlify-cms": "^2.9.1",
