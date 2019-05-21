@@ -17,7 +17,6 @@ const BlogsContainer = () => (
                 title
                 date
                 description
-                thumbnail
               }
               fields {
                 slug
