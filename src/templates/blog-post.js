@@ -37,7 +37,7 @@ export default ({ data }) => {
         <Row>
           <Col>
             <h5>
-              Posted on{" "}
+              Taken on{" "}
               <Moment format="DD MMM YYYY, hh:mm A">
                 {post.frontmatter.date}
               </Moment>
