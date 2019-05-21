@@ -8,7 +8,7 @@ import SEO from "../components/SEO";
 
 export default ({ data }) => {
   const post = data && data.markdownRemark;
-
+  console.log(data);
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
@@ -65,6 +65,7 @@ export const blogPostQuery = graphql`
         title
         thumbnail
         description
+        date
       }
     }
   }
