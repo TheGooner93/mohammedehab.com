@@ -45,9 +45,11 @@ const BlogsContainer = () => (
                       <Card
                         className="blog-card text-white"
                         style={{
-                          backgroundImage: `url(${
-                            post.node.frontmatter.thumbnail
-                          })`
+                          background: `url(${post.node.frontmatter.thumbnail})`,
+                          backgroundRepeat: "no-repeat",
+                          backgroundSize: "950px",
+                          backgroundPosition: "left",
+                          opacity: "0.9"
                         }}
                       >
                         <Card.Body>
