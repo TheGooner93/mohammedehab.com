@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-offline`,
+    `gatsby-transformer-remote-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
