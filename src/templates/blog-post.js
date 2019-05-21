@@ -20,7 +20,7 @@ export default ({ data }) => {
             </Button>
           </Link>
         </Row>
-        <Row>
+        {/* <Row>
           <Col>
             <img
               src={post.frontmatter.thumbnail}
@@ -28,7 +28,7 @@ export default ({ data }) => {
               alt={post.frontmatter.title}
             />
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col>
             <h1>{post.frontmatter.title}</h1>
@@ -61,7 +61,6 @@ export const blogPostQuery = graphql`
       html
       frontmatter {
         title
-        thumbnail
         description
       }
     }
