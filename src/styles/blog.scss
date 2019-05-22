@@ -14,6 +14,18 @@
     padding: 0.2rem;
     border: none;
     border-radius: 0.7rem;
+    @media (max-width: 1199px) {
+      background-size: 43rem !important;
+      background-position: "right" !important;
+    }
+    @media (max-width: 991px) {
+      background-size: 34rem !important;
+      background-position: "right" !important;
+    }
+    @media (max-width: 767px) {
+      background-size: 25rem !important;
+      background-position: "right" !important;
+    }
     transition: all 0.3s ease-in-out;
     @media (hover: hover) {
       &:hover {

@@ -48,7 +48,7 @@ const BlogsContainer = () => (
                           background: `url(${post.node.frontmatter.thumbnail})`,
                           backgroundRepeat: "no-repeat",
                           backgroundSize: "55rem",
-                          backgroundPosition: "left",
+                          backgroundPosition: "right",
                           opacity: "0.9"
                         }}
                       >
