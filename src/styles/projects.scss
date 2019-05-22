@@ -25,9 +25,9 @@
   @media (hover: hover) {
     &:hover {
       transform: scale(1.05);
-      box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
       -webkit-box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
       -moz-box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
+      box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
     }
   }
 }
