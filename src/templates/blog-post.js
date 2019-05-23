@@ -17,7 +17,12 @@ export default ({ data }) => {
           <Col>
             <img
               src={post.frontmatter.thumbnail}
-              style={{ margin: "1rem", maxWidth: "75%" }}
+              style={{
+                margin: "1rem",
+                maxWidth: "75%",
+                border: "5px outset white",
+                borderRadius: "1.5rem"
+              }}
               alt={post.frontmatter.title}
             />
           </Col>
