@@ -19,13 +19,14 @@ const Header = ({ siteTitle }) => {
       })}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
-        <Row>
+        <Row style={{ padding: "0.1rem" }}>
           <Col xs="6" sm="6" md="6" lg="6" xl="6">
             <div
               className="header-image-wrapper"
               style={{
                 margin: "0.2rem 0.2rem 0.2rem 0.2rem",
                 padding: "0.5rem",
+                minWidth: 140,
                 maxWidth: 140
               }}
             >
@@ -42,7 +43,7 @@ const Header = ({ siteTitle }) => {
                     style={{
                       float: "right",
                       margin: "0.5rem 0rem 0.1rem 0.1rem",
-                      padding: `0.5rem`
+                      padding: `0.15rem`
                     }}
                   >
                     <Button
@@ -52,7 +53,7 @@ const Header = ({ siteTitle }) => {
                     >
                       <FaBars
                         color={isDrawerOpen ? "white" : "black"}
-                        size="2em"
+                        size="2.6em"
                       />
                     </Button>
                   </div>
