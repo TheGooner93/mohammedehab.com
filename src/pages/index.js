@@ -14,7 +14,7 @@ const IndexPage = () => (
       keywords={[`gatsby`, `application`, `react`]}
       description="Mohammed Ehab's Website"
     />
-    <Container style={{ textAlign: "center" }}>
+    <Container style={{ textAlign: "center", paddingBottom: "1.5rem" }}>
       <Row>
         <Col>
           <div

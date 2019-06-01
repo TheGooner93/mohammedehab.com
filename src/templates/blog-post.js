@@ -12,7 +12,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <Container style={{ textAlign: "center" }}>
+      <Container style={{ textAlign: "center", paddingBottom: "1.5rem" }}>
         <Row>
           <Col>
             <img
