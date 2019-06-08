@@ -11,7 +11,7 @@ const RoleCarousel = () => (
       borderRadius: "10px"
     }}
   >
-    <Carousel indicators={false} interval="3000">
+    <Carousel indicators={false} controls={false} interval="3000">
       <CarouselItem>
         <Link to="/projects" style={{ color: "white", textDecoration: "none" }}>
           <h3 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
