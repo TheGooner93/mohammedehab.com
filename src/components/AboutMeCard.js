@@ -19,7 +19,7 @@ const AboutMeCard = () => {
             </ListGroup.Item>
             <ListGroup.Item variant="warning">
               {" "}
-              A Frontend Developer at Algorythma, Abu Dhabi, UAE.
+              A Frontend Developer at saal.ai, Abu Dhabi, UAE.
             </ListGroup.Item>
             <ListGroup.Item variant="warning">
               {" "}

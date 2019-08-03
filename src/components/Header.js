@@ -100,7 +100,7 @@ const Header = ({ siteTitle }) => {
               <StaticQuery
                 query={graphql`
                   {
-                    resumeLink: allFile(filter: { extension: { eq: "pdf" } }) {
+                    resumeLink: allFile(filter: { extension: { eq: "docx" } }) {
                       edges {
                         node {
                           publicURL
