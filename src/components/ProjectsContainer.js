@@ -6,13 +6,13 @@ import { OutboundLink } from "gatsby-plugin-google-analytics";
 const ProjectsContainer = () => (
   <StaticQuery
     query={graphql`
-      query repoDetails {
-        data {
-          user {
-            name
-            pinnedItems {
-              nodes {
-                node {
+      query GetGHRepos {
+        githubData {
+          data {
+            user {
+              name
+              pinnedItems {
+                nodes {
                   id
                   description
                   url
@@ -26,12 +26,14 @@ const ProjectsContainer = () => (
       }
     `}
     render={(data) => {
-      const pinnedRepos =
-        data &&
-        data.githubData &&
-        data.githubData.data &&
-        data.githubData.data.user.pinnedRepositories &&
-        data.githubData.data.user.pinnedRepositories.edges;
+      console.log(data);
+      const {
+        githubData: {
+          data: {
+            user: { pinnedItems: { nodes: pinnedRepos = [] } = {} } = {},
+          } = {},
+        } = {},
+      } = data;
 
       return (
         <Container>
@@ -45,15 +47,15 @@ const ProjectsContainer = () => (
                   lg="4"
                   xl="4"
                   className="project-card-wrapper"
-                  key={pinnedRepo.node.id}
+                  key={pinnedRepo.id}
                 >
-                  <OutboundLink href={pinnedRepo.node.homepageUrl}>
+                  <OutboundLink href={pinnedRepo.homepageUrl}>
                     <Card text="white" className="project-card">
                       <Card.Body>
                         <Card.Title>
-                          <strong>{pinnedRepo.node.name}</strong>
+                          <strong>{pinnedRepo.name}</strong>
                         </Card.Title>
-                        <Card.Text>{pinnedRepo.node.description}</Card.Text>
+                        <Card.Text>{pinnedRepo.description}</Card.Text>
                       </Card.Body>
                     </Card>
                   </OutboundLink>

@@ -1,3 +1,8 @@
+// Initialize dotenv
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`, // or '.env'
+});
+
 module.exports = {
   siteMetadata: {
     title: `Mohammed Ehab`,
