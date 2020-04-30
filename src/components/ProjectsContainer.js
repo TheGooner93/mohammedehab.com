@@ -7,19 +7,17 @@ const ProjectsContainer = () => (
   <StaticQuery
     query={graphql`
       query repoDetails {
-        githubData {
-          data {
-            user {
-              name
-              pinnedRepositories {
-                edges {
-                  node {
-                    id
-                    description
-                    url
-                    name
-                    homepageUrl
-                  }
+        data {
+          user {
+            name
+            pinnedItems {
+              nodes {
+                node {
+                  id
+                  description
+                  url
+                  name
+                  homepageUrl
                 }
               }
             }
@@ -27,7 +25,7 @@ const ProjectsContainer = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const pinnedRepos =
         data &&
         data.githubData &&
@@ -39,7 +37,7 @@ const ProjectsContainer = () => (
         <Container>
           <Row>
             {pinnedRepos.length ? (
-              pinnedRepos.map(pinnedRepo => (
+              pinnedRepos.map((pinnedRepo) => (
                 <Col
                   xs="12"
                   sm="12"
