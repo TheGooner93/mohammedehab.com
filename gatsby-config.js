@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mohammed Ehab`,
     description: `Portfolio, photoblog and other jazz, courtesy of yours truly.`,
-    author: `@TheGooner93`
+    author: `@TheGooner93`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -16,22 +16,22 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogs`,
-        path: `${__dirname}/static/blog_posts`
-      }
+        path: `${__dirname}/static/blog_posts`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `resume`,
-        path: `${__dirname}/static/resume`
-      }
+        path: `${__dirname}/static/resume`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -42,8 +42,8 @@ module.exports = {
         background_color: `white`,
         theme_color: `black`,
         display: `minimal-ui`,
-        icon: `src/images/ThickBorderLogo.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/ThickBorderLogo.png`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-source-github-api`,
@@ -54,9 +54,9 @@ module.exports = {
         query GetGHRepos($user: String!){ 
           user(login:$user) {
             name
-            pinnedRepositories(first:10) {    
-              edges {
-                node {
+            pinnedItems(first:10, types: REPOSITORY) {    
+              nodes {
+                ... on Repository {
                   id
                   name
                   description
@@ -67,15 +67,15 @@ module.exports = {
             }
           }
         }`,
-        variables: { user: `TheGooner93` }
-      }
+        variables: { user: `TheGooner93` },
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-140382357-1`,
-        respectDNT: true
-      }
+        respectDNT: true,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -83,9 +83,9 @@ module.exports = {
         fonts: [
           "Comfortaa:300,400,500,600,700",
           "Questrial",
-          "Martel:200,300,400,600,700,800,900"
-        ]
-      }
-    }
-  ]
+          "Martel:200,300,400,600,700,800,900",
+        ],
+      },
+    },
+  ],
 };
