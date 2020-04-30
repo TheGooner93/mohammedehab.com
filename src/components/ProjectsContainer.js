@@ -26,7 +26,6 @@ const ProjectsContainer = () => (
       }
     `}
     render={(data) => {
-      console.log(data);
       const {
         githubData: {
           data: {
