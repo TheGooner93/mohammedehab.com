@@ -27,3 +27,11 @@ a {
     text-decoration: none;
   }
 }
+
+.profile-image-wrapper {
+  margin: 0.5rem auto;
+  max-width: 180px;
+  @media (max-width : 550px) {
+    max-width: 150px;
+  }
+}

@@ -19,48 +19,24 @@ const Header = ({ siteTitle }) => {
       })}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
-        <Row style={{ padding: "0.1rem" }}>
-          <Col xs="6" sm="6" md="6" lg="6" xl="6">
-            <div
-              className="header-image-wrapper"
-              style={{
-                margin: "0.2rem 0.2rem 0.2rem 0.2rem",
-                padding: "0.5rem",
-                minWidth: 140,
-                maxWidth: 140
-              }}
+        <Row style={{ padding: "0.1rem 1.0875rem 0.1rem", justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="header-image-wrapper" >
+            <Link to="/">
+              <LogoImage />
+            </Link>
+          </div>
+          <div className="header-drawer" style={{ padding: `0.15rem` }}>
+            <Button
+              variant={isDrawerOpen ? "dark" : "light"}
+              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              aria-label="Open drawer"
             >
-              <Link to="/">
-                <LogoImage />
-              </Link>
-            </div>
-          </Col>
-          <Col xs="6" sm="6" md="6" lg="6" xl="6">
-            <Container>
-              <Row>
-                <Col>
-                  <div
-                    style={{
-                      float: "right",
-                      margin: "0.5rem 0rem 0.1rem 0.1rem",
-                      padding: `0.15rem`
-                    }}
-                  >
-                    <Button
-                      variant={isDrawerOpen ? "dark" : "light"}
-                      onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                      aria-label="Open drawer"
-                    >
-                      <FaBars
-                        color={isDrawerOpen ? "white" : "black"}
-                        size="2.6em"
-                      />
-                    </Button>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </Col>
+              <FaBars
+                color={isDrawerOpen ? "white" : "black"}
+                className={'header-drawer-icon'}
+              />
+            </Button>
+          </div>
         </Row>
         {isDrawerOpen ? (
           <Row className="row-header-expanded">
@@ -135,7 +111,7 @@ const Header = ({ siteTitle }) => {
           </Row>
         ) : null}
       </Container>
-    </header>
+    </header >
   );
 };
 

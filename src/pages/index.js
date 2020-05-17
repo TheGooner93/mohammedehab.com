@@ -17,12 +17,7 @@ const IndexPage = () => (
     <Container style={{ textAlign: "center", paddingBottom: "1.5rem" }}>
       <Row>
         <Col>
-          <div
-            style={{
-              margin: `0.5rem auto`,
-              maxWidth: 180
-            }}
-          >
+          <div className='profile-image-wrapper'>
             <ProfileImage />
           </div>
         </Col>

@@ -1,11 +1,38 @@
 .header-image-wrapper {
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  padding: 0.5rem 1rem 0.5rem 0rem;
+  min-width: 140px;
+  max-width: 140px;
+  @media (max-width : 550px) {
+    min-width: 110px;
+    max-width: 110px;
+  }
 }
+
+.header-drawer {
+  padding: 0.15rem;
+  &-icon {
+    height : 2.6rem;
+    width : 2.6rem;
+    @media (max-width : 550px) {
+      height: 1.6rem;
+      width: 1.5rem;
+    }
+    @media (max-width : 300px) {
+      justify-content: flex-end;
+    }
+  }
+}
+
 
 .header-default {
   height: 5rem;
   background: white;
   border-bottom: 0.1rem solid #e9ecef;
   transition: height 0.2s ease;
+  @media (max-width : 550px) {
+    height: 4.2rem;
+  }
 }
 
 .header-expanded {
@@ -13,7 +40,7 @@
   height: 9rem;
   transition: height 0.2s ease-in;
   @media screen and (max-width: 575px) {
-    height: 13rem;
+    height: 12rem;
   }
 }
 
@@ -31,6 +58,9 @@
     cursor: pointer;
     color: black;
     background: white;
+  }
+  @media (max-width : 550px) {
+    font-size: 0.85rem;
   }
 }
 

@@ -49,10 +49,9 @@ const BlogsContainer = () => (
                           backgroundRepeat: "no-repeat",
                           backgroundSize: "55rem",
                           backgroundPosition: "right",
-                          opacity: "0.9"
                         }}
                       >
-                        <Card.Body>
+                        <Card.Body className="blog-card_blur">
                           <Card.Title>
                             <h3>{post.node.frontmatter.title}</h3>
                           </Card.Title>

@@ -11,9 +11,12 @@
   cursor: pointer;
   .blog-card {
     position: relative;
-    padding: 0.2rem;
     border: none;
     border-radius: 0.7rem;
+    &_blur {
+      backdrop-filter: blur(3px);
+      border-radius: inherit;
+    }
     @media (max-width: 1199px) {
       background-size: 43rem !important;
       background-position: "right" !important;
