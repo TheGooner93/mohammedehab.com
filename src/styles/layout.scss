@@ -34,7 +34,10 @@ a {
   background: whitesmoke;
   transition : background 0.2s ease-in-out;
   min-height: 100vh;
+  border-top : 1px whitesmoke solid;
+  z-index: 10;
   &_dark {
+    @extend .layout-content-wrapper;
     background: black;
   }
 }

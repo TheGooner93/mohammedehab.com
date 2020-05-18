@@ -115,4 +115,6 @@
 
 .row-header-expanded {
   background: black;
+  z-index: -1;
+  border : 1px solid whitesmoke;
 }
