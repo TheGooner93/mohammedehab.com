@@ -11,7 +11,8 @@ const Footer = () => {
         background: "black",
         width: "100%",
         minHeight: "6rem",
-        bottom: 0
+        bottom: 0,
+        borderTop: '1px whitesmoke solid'
       }}
     >
       <div
