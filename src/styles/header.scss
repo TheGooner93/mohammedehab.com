@@ -24,14 +24,44 @@
   }
 }
 
-
 .header-default {
   height: 5rem;
-  background: white;
+  background: none;
   border-bottom: 0.1rem solid #e9ecef;
   transition: height 0.2s ease;
   @media (max-width : 550px) {
     height: 4.2rem;
+  }
+  &::before,&::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+  &::before {
+    background: -webkit-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
+    background: linear-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
+    animation : animateHeaderColor 8s ease-in-out 0s infinite alternate;
+    height: inherit;
+    z-index: -1;
+  }
+  &::after {
+    background: -webkit-gradient(90deg, rgba(2,0,36,0.81) 0%, rgba(144,18,187,1) 0%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(2,0,36,0.81) 0%, rgba(144,18,187,1) 0%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,0.81) 0%, rgba(144,18,187,1) 0%, rgba(0,212,255,1) 100%);
+    animation : animateHeaderColor 8s ease-in-out -2s infinite alternate;
+    height: inherit;
+    z-index: -2;
+  }
+}
+
+@keyframes animateHeaderColor {
+  0%, 50%, 100%{
+    opacity: 1;
+  }
+  25%, 75%{
+    opacity: 0.25;
   }
 }
 

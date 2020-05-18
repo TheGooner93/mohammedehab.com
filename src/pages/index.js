@@ -26,17 +26,17 @@ const IndexPage = () => (
         <Col>
           <h1>
             Hi, I'm{" "}
-            <mark
+            <span
               style={{
                 boxDecorationBreak: "clone",
                 WebkitBoxDecorationBreak: "clone",
-                backgroundColor: "lightgrey",
-                color: "black",
-                padding: "0.25rem"
+                backgroundColor: "rgba(63,94,251,1)",
+                color: "white",
+                padding: "0.25rem",
               }}
             >
               Mohammed Ehab
-            </mark>
+            </span>
             !
           </h1>
         </Col>
