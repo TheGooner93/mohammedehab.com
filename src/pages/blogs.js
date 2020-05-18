@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
