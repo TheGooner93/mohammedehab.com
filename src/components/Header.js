@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import classnames from "classnames";
+import classNames from "classnames";
 import { connect } from 'react-redux';
 import { FaBars } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
@@ -16,7 +16,7 @@ import "../styles/header.scss";
 
 const Header = (props) => {
 
-  const { theme:currentStoredTheme = '', toggleDarkMode = () => {} } = props;
+  const { theme: currentStoredTheme = '', toggleDarkMode = () => { } } = props;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('day');
@@ -25,13 +25,6 @@ const Header = (props) => {
     const currentTheme = currentStoredTheme ? currentStoredTheme : helper.getCurrentTheme();
     setCurrentTheme(currentTheme);
   }, []);
-
-  // useEffect(() => {
-  //   const currentStoredTheme = helper.getCurrentTheme();
-  //   if (currentStoredTheme !== currentTheme) {
-  //     helper.toggleTheme();
-  //   }
-  // }, [currentTheme])
 
   const onThemeButtonClick = () => {
     const newTheme = currentTheme === 'day' ? 'night' : 'day'
@@ -43,7 +36,7 @@ const Header = (props) => {
 
   return (
     <header
-      className={classnames({
+      className={classNames({
         "header-default": !isDrawerOpen,
         "header-expanded": isDrawerOpen
       })}
@@ -93,7 +86,7 @@ const Header = (props) => {
               <Link to="/">
                 {" "}
                 <div
-                  className="drawer-cell"
+                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                   onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                 >
                   Home
@@ -103,7 +96,7 @@ const Header = (props) => {
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <Link to="/blogs/">
                 <div
-                  className="drawer-cell"
+                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                   onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                 >
                   Blog
@@ -114,7 +107,7 @@ const Header = (props) => {
               <Link to="/projects/">
                 {" "}
                 <div
-                  className="drawer-cell"
+                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                   onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                 >
                   Projects
@@ -147,7 +140,7 @@ const Header = (props) => {
                       }
                     >
                       <div
-                        className="drawer-cell"
+                        className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                         onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                       >
                         Resume
@@ -172,8 +165,10 @@ Header.defaultProps = {
   siteTitle: ``
 };
 
-const mapStateToProps = state => ({
-  theme: state.theme.theme
-})
+const mapStateToProps = state => {
+  return {
+    theme: state.theme.theme
+  }
+};
 
-export default connect(mapStateToProps, {toggleDarkMode})(Header);
+export default connect(mapStateToProps, { toggleDarkMode })(Header);

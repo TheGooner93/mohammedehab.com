@@ -15,21 +15,7 @@ const BlogPage = () => (
       keywords={[`Mohammed`, `Ehab`, `blog`, `photoblog`, `feed`]}
       description="Mohammed Ehab's Photoblog"
     />
-    <Container className="blog-container">
-      <Row>
-        <Col>
-          <h1>Blog</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <hr />
-        </Col>
-      </Row>
-      <Row>
-        <BlogsContainer />
-      </Row>
-    </Container>
+    <BlogsContainer />
   </Layout>
 );
 

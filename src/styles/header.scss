@@ -27,7 +27,7 @@
 .header-default {
   height: 5rem;
   background: none;
-  border-bottom: 0.1rem solid #e9ecef;
+  // border-bottom: 0.1rem solid #e9ecef;
   transition: height 0.2s ease;
   @media (max-width : 550px) {
     height: 4.2rem;
@@ -68,7 +68,7 @@
 .header-expanded {
   @extend .header-default;
   height: 9rem;
-  transition: height 0.2s ease-in;
+  transition: height 0.2s ease-in-out;
   @media screen and (max-width: 575px) {
     height: 12rem;
   }
@@ -83,6 +83,7 @@
   margin-right: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  border : 1px solid transparent;
   &:hover {
     border-radius: 0.4rem;
     cursor: pointer;
@@ -91,6 +92,9 @@
   }
   @media (max-width : 550px) {
     font-size: 0.85rem;
+  }
+  &_dark {
+    border : 1px solid white;
   }
 }
 

@@ -28,10 +28,14 @@ a {
   }
 }
 
-.profile-image-wrapper {
-  margin: 0.5rem auto;
-  max-width: 180px;
-  @media (max-width : 550px) {
-    max-width: 165px;
+.layout-content-wrapper {
+  margin: 0 auto;
+  padding: 1.5rem 1.0875rem 7rem;
+  background: whitesmoke;
+  transition : background 0.2s ease-in-out;
+  min-height: 100vh;
+  &_dark {
+    background: black;
   }
 }
+
