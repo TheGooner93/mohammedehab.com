@@ -37,7 +37,8 @@ const Header = (props) => {
   return (
     <header
       className={classNames({
-        "header-default": !isDrawerOpen,
+        "header-default": !isDrawerOpen && currentTheme === 'day',
+        "header-default_dark": currentTheme === 'night',
         "header-expanded": isDrawerOpen
       })}
     >

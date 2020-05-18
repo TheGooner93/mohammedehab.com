@@ -36,4 +36,9 @@
       box-shadow: 10px 10px 122px -25px rgba(0, 0, 0, 0.59);
     }
   }
+  &_dark {
+    @extend .project-card;
+    transition: all 0.2s ease-in-out;
+    background : #2c3e50;
+  }
 }

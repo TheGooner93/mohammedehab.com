@@ -54,7 +54,7 @@ const ProjectsContainer = (props) => {
                   key={pinnedRepo.id}
                 >
                   <OutboundLink href={pinnedRepo.homepageUrl}>
-                    <Card text="white" className="project-card">
+                    <Card text="white" className={classNames(theme === 'day' ? 'project-card' : 'project-card_dark')}>
                       <Card.Body>
                         <Card.Title>
                           <strong>{pinnedRepo.name}</strong>

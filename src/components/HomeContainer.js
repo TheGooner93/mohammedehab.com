@@ -21,13 +21,10 @@ const HomeContainer = (props) => {
                 <Col>
                     <h1 className={classNames('layout-text', theme === 'night' ? 'layout-text_dark' : '')}>
                         Hi, I'm{" "}
-                        <span style={{
-                            backgroundColor: "rgba(63,94,251,1)",
-                            color: "white",
-                            padding: "0.25rem",
-                        }}>
+                        <span className={classNames(theme === 'day' ? 'home-name-text' : 'home-name-text_dark')}>
                             Mohammed Ehab
-                </span>
+                        </span>
+                        <span>!</span>
                     </h1>
                 </Col>
             </Row>

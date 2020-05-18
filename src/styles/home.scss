@@ -14,3 +14,16 @@
         color : white;
     }
 }
+
+.home-name-text{
+    background-color: rgba(63,94,251,1);
+    color: white;
+    padding: 0.25rem;
+    transition: color 0.2s ease-in-out background-color 0.2s ease-in-out;
+    &_dark {
+        background-color: #bdc3c7;
+        color: black;
+        padding: 0.25rem;
+        transition: color 0.2s ease-in-out background-color 0.2s ease-in-out;
+    }
+}
