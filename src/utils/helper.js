@@ -3,6 +3,7 @@ const toggleTheme = () => {
     const newValue = currentValue === 'night' ? 'day' : 'night';
 
     localStorage.setItem('currentTheme', JSON.stringify(newValue));
+
 };
 
 const getCurrentTheme = () => {

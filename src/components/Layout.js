@@ -15,8 +15,8 @@ import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/layout.scss";
 
-const Layout = ({ children }) => (
-  <StaticQuery
+const Layout = ({ children }) => {
+  return <StaticQuery
     query={graphql`
       {
         site {
@@ -43,7 +43,7 @@ const Layout = ({ children }) => (
       </div>
     )}
   />
-);
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired

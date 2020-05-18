@@ -1,36 +1,44 @@
 import PropTypes from "prop-types";
-import React, { useState, useEffect } from "react";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import classnames from "classnames";
+import { connect } from 'react-redux';
 import { FaBars } from "react-icons/fa";
 import { BsSun, BsMoon } from "react-icons/bs";
-import LogoImage from "./LogoImage";
 import { Link, StaticQuery, graphql } from "gatsby";
-import classnames from "classnames";
+import React, { useState, useEffect } from "react";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
+import LogoImage from "./LogoImage";
 import helper from '../utils/helper';
+import { toggleDarkMode } from '../state/actions/theme.action';
 
 import "../styles/header.scss";
 
-const Header = ({ siteTitle }) => {
+const Header = (props) => {
+
+  const { theme:currentStoredTheme = '', toggleDarkMode = () => {} } = props;
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('day');
 
   useEffect(() => {
-    const currentTheme = helper.getCurrentTheme();
+    const currentTheme = currentStoredTheme ? currentStoredTheme : helper.getCurrentTheme();
     setCurrentTheme(currentTheme);
   }, []);
 
-  useEffect(() => {
-    const currentStoredTheme = helper.getCurrentTheme();
-    if (currentStoredTheme !== currentTheme) {
-      helper.toggleTheme();
-    }
-  }, [currentTheme])
+  // useEffect(() => {
+  //   const currentStoredTheme = helper.getCurrentTheme();
+  //   if (currentStoredTheme !== currentTheme) {
+  //     helper.toggleTheme();
+  //   }
+  // }, [currentTheme])
 
   const onThemeButtonClick = () => {
-    const currentTheme = helper.getCurrentTheme();
-    setCurrentTheme(currentTheme === 'day' ? 'night' : 'day');
+    const newTheme = currentTheme === 'day' ? 'night' : 'day'
+    setCurrentTheme(newTheme);
+
+    //Call action to update redux store
+    toggleDarkMode(newTheme);
   }
 
   return (
@@ -164,4 +172,8 @@ Header.defaultProps = {
   siteTitle: ``
 };
 
-export default Header;
+const mapStateToProps = state => ({
+  theme: state.theme.theme
+})
+
+export default connect(mapStateToProps, {toggleDarkMode})(Header);
