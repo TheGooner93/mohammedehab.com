@@ -1,16 +1,38 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
+import { BsSun, BsMoon } from "react-icons/bs";
 import LogoImage from "./LogoImage";
 import { Link, StaticQuery, graphql } from "gatsby";
 import classnames from "classnames";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
+import helper from '../utils/helper';
+
 import "../styles/header.scss";
 
 const Header = ({ siteTitle }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('day');
+
+  useEffect(() => {
+    const currentTheme = helper.getCurrentTheme();
+    setCurrentTheme(currentTheme);
+  }, []);
+
+  useEffect(() => {
+    const currentStoredTheme = helper.getCurrentTheme();
+    if (currentStoredTheme !== currentTheme) {
+      helper.toggleTheme();
+    }
+  }, [currentTheme])
+
+  const onThemeButtonClick = () => {
+    const currentTheme = helper.getCurrentTheme();
+    setCurrentTheme(currentTheme === 'day' ? 'night' : 'day');
+  }
+
   return (
     <header
       className={classnames({
@@ -25,17 +47,36 @@ const Header = ({ siteTitle }) => {
               <LogoImage />
             </Link>
           </div>
-          <div className="header-drawer" style={{ padding: `0.15rem` }}>
-            <Button
-              variant={isDrawerOpen ? "dark" : "light"}
-              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-              aria-label="Open drawer"
-            >
-              <FaBars
-                color={isDrawerOpen ? "white" : "black"}
-                className={'header-drawer-icon'}
-              />
-            </Button>
+          <div className='d-flex justify-content-center'>
+            <div className="header-drawer" style={{ padding: `0.15rem` }}>
+              <Button
+                variant={currentTheme === 'night' ? "dark" : "light"}
+                onClick={onThemeButtonClick}
+                aria-label="Toggle theme"
+              >
+                {
+                  currentTheme === 'night' ? <BsMoon
+                    color={currentTheme === 'night' ? "white" : "black"}
+                    className={'header-drawer-icon'}
+                  /> : <BsSun
+                      color={currentTheme === 'night' ? "white" : "black"}
+                      className={'header-drawer-icon'}
+                    />
+                }
+              </Button>
+            </div>
+            <div className="header-drawer" style={{ padding: `0.15rem` }}>
+              <Button
+                variant={isDrawerOpen ? "dark" : "light"}
+                onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                aria-label="Open drawer"
+              >
+                <FaBars
+                  color={isDrawerOpen ? "white" : "black"}
+                  className={'header-drawer-icon'}
+                />
+              </Button>
+            </div>
           </div>
         </Row>
         {isDrawerOpen ? (

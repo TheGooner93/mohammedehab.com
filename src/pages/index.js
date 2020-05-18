@@ -15,14 +15,13 @@ const IndexPage = () => (
       description="Mohammed Ehab's Website"
     />
     <Container style={{ textAlign: "center", paddingBottom: "1.5rem" }}>
-      <Row>
+      <Row className='mb-3 mb-md-4'>
         <Col>
           <div className='profile-image-wrapper'>
             <ProfileImage />
           </div>
         </Col>
       </Row>
-      <br />
       <Row>
         <Col>
           <h1>
