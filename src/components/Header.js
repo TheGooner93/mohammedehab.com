@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { connect } from 'react-redux';
 import { FaBars } from "react-icons/fa";
-import { BsSun, BsMoon } from "react-icons/bs";
+import { RiSunLine, RiMoonLine } from "react-icons/ri";
 import { Link, StaticQuery, graphql } from "gatsby";
 import React, { useState, useEffect } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
@@ -57,10 +57,10 @@ const Header = (props) => {
                 aria-label="Toggle theme"
               >
                 {
-                  currentTheme === 'night' ? <BsMoon
+                  currentTheme === 'night' ? <RiMoonLine
                     color={currentTheme === 'night' ? "white" : "black"}
                     className={'header-drawer-icon'}
-                  /> : <BsSun
+                  /> : <RiSunLine
                       color={currentTheme === 'night' ? "white" : "black"}
                       className={'header-drawer-icon'}
                     />
