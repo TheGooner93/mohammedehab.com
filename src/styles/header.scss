@@ -39,9 +39,9 @@
     top: 0; bottom: 0; left: 0; right: 0;
   }
   &::before {
-    background: -webkit-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
+    background: -webkit-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
     background: -webkit-linear-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
-    background: linear-gradient(135deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,70,1) 100%);
     animation : animateHeaderColor 8s ease-in-out 0s infinite alternate;
     height: inherit;
     z-index: -1;
