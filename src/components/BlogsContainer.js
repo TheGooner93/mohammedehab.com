@@ -99,7 +99,7 @@ const BlogsContainer = (props) => {
 };
 
 const mapStateToProps = state => ({
-  theme: state.theme.theme
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps, {})(BlogsContainer);

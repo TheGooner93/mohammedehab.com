@@ -41,7 +41,8 @@ const Layout = ({ children, theme }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  theme: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({

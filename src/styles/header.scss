@@ -85,7 +85,7 @@
   height: 9rem;
   transition: height 0.2s ease-in-out;
   @media screen and (max-width: 575px) {
-    height: 12rem;
+    height: 12.3rem;
   }
 }
 
@@ -116,5 +116,9 @@
 .row-header-expanded {
   background: black;
   z-index: -1;
-  border : 1px solid whitesmoke;
+  border : 1px solid grey;
+  &_dark {
+    @extend .row-header-expanded;
+    border : 1px solid white;
+  }
 }

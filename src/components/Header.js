@@ -82,7 +82,7 @@ const Header = (props) => {
           </div>
         </Row>
         {isDrawerOpen ? (
-          <Row className="row-header-expanded">
+          <Row className={classNames('row-header-expanded', currentTheme === 'night' ? 'row-header-expanded_dark' : '')}>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
               <Link to="/">
                 {" "}
@@ -159,7 +159,9 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
+  theme: PropTypes.string.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {
