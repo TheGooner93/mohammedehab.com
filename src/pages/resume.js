@@ -1,4 +1,5 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
@@ -10,16 +11,16 @@ const ResumePage = () => {
   return (
     <Layout>
       <SEO title="Resume" />
-      {/* <Container className="resume-container">
+      <Container className="resume-container">
         <Row>
           <Col>
             <h1>Resume</h1>
           </Col>
         </Row>
-        <Row> */}
+        <Row>
           <ResumeContainer />
-        {/* </Row>
-      </Container> */}
+        </Row>
+      </Container>
     </Layout>
   );
 };

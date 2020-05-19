@@ -39,7 +39,7 @@ const Header = (props) => {
   return (
     <header
       className={classNames({
-        "header-default_disappeared": !showHeader,
+        "header-default_disappeared" : !showHeader,
         "header-default_dark": showHeader && currentTheme === 'night',
         "header-default": showHeader && !isDrawerOpen && currentTheme === 'day',
         "header-expanded": showHeader && isDrawerOpen
@@ -119,13 +119,40 @@ const Header = (props) => {
               </Link>
             </Col>
             <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <Link to='/resume/'>
-                <div
-                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
-                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-                  Resume
-                </div>
-              </Link>
+              <StaticQuery
+                query={graphql`
+                  {
+                    resumeLink: allFile(filter: { extension: { eq: "docx" } }) {
+                      edges {
+                        node {
+                          publicURL
+                        }
+                      }
+                    }
+                  }
+                `}
+                render={data => {
+                  return (
+                    <OutboundLink
+                      href={
+                        data &&
+                        data.resumeLink &&
+                        data.resumeLink.edges &&
+                        data.resumeLink.edges[0] &&
+                        data.resumeLink.edges[0].node &&
+                        data.resumeLink.edges[0].node.publicURL
+                      }
+                    >
+                      <div
+                        className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
+                        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                      >
+                        Resume
+                      </div>
+                    </OutboundLink>
+                  );
+                }}
+              />
             </Col>
           </Row>
         ) : null}
@@ -138,7 +165,7 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
   theme: PropTypes.string.isRequired,
   toggleDarkMode: PropTypes.func.isRequired,
-  showHeader: PropTypes.bool.isRequired,
+  showHeader : PropTypes.bool.isRequired,
 };
 
 Header.defaultProps = {
