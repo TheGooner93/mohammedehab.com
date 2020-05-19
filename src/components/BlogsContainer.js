@@ -39,8 +39,8 @@ const BlogsContainer = (props) => {
       return (
         <Container>
           {blogsPosts.length ? (
-            data.allMarkdownRemark.edges.map(post => (
-              <Row key={post.node.id}>
+            data.allMarkdownRemark.edges.map((post,index) => (
+              <Row key={post.node.id} className={`animate__animated animate__flipInX animate__fast`}>
                 <Col xs="12" sm="12" md="12" lg="12" xl="12">
                   <div className="blog-card-wrapper">
                     <Link

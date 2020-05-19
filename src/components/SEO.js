@@ -71,13 +71,15 @@ function SEO({ description, lang, meta, keywords, title }) {
         .concat(
           keywords.length > 0
             ? {
-                name: `keywords`,
-                content: keywords.join(`, `)
-              }
+              name: `keywords`,
+              content: keywords.join(`, `)
+            }
             : []
         )
         .concat(meta)}
-    />
+    >
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    </Helmet>
   );
 }
 

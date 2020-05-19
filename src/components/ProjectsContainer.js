@@ -43,15 +43,15 @@ const ProjectsContainer = (props) => {
         <Container>
           <Row>
             {pinnedRepos.length ? (
-              pinnedRepos.map((pinnedRepo) => (
+              pinnedRepos.map((pinnedRepo, index) => (
                 <Col
                   xs="12"
                   sm="12"
                   md="6"
                   lg="4"
                   xl="4"
-                  className="project-card-wrapper"
                   key={pinnedRepo.id}
+                  className={`project-card-wrapper animate__animated animate__flipInX animate__fast`}
                 >
                   <OutboundLink href={pinnedRepo.homepageUrl}>
                     <Card text="white" className={classNames(theme === 'day' ? 'project-card' : 'project-card_dark')}>
