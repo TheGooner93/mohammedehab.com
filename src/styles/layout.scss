@@ -40,5 +40,9 @@ a {
     @extend .layout-content-wrapper;
     background: black;
   }
+  padding-top : 6.5rem;
+  @media (max-width : 550px) {
+    padding-top: 4.5rem;
+  }
 }
 
