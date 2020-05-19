@@ -42,7 +42,8 @@ const Header = (props) => {
         "header-default_dark": showHeader && currentTheme === 'night',
         "header-default": showHeader && !isDrawerOpen && currentTheme === 'day',
         "header-expanded": showHeader && isDrawerOpen,
-        "header-default_disappeared": !showHeader,
+        "header-default_disappeared": !showHeader && currentTheme === 'day',
+        "header-default_dark_disappeared": !showHeader && currentTheme === 'night',
       })}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
