@@ -48,7 +48,7 @@ const BlogsContainer = (props) => {
                       style={{ textDecoration: "none" }}
                     >
                       <Card
-                        className="blog-card text-white"
+                        className={classNames('blog-card text-white', theme === 'night' ? 'blog-card_dark' : '')}
                         style={{
                           background: `url(${post.node.frontmatter.thumbnail})`,
                           backgroundRepeat: "no-repeat",
