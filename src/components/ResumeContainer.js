@@ -13,7 +13,7 @@ const ResumeContainer = (props) => {
     <StaticQuery
       query={graphql`
                   {
-                    resumeLink: allFile(filter: { extension: { eq: "docx" } }) {
+                    resumeLink: allFile(filter: { extension: { eq: "pdf" } }) {
                       edges {
                         node {
                           publicURL
