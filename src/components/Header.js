@@ -39,10 +39,10 @@ const Header = (props) => {
   return (
     <header
       className={classNames({
-        "header-default_disappeared" : !showHeader,
         "header-default_dark": showHeader && currentTheme === 'night',
         "header-default": showHeader && !isDrawerOpen && currentTheme === 'day',
-        "header-expanded": showHeader && isDrawerOpen
+        "header-expanded": showHeader && isDrawerOpen,
+        "header-default_disappeared": !showHeader,
       })}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
@@ -84,43 +84,44 @@ const Header = (props) => {
             </div>
           </div>
         </Row>
-        {isDrawerOpen ? (
-          <Row className={classNames('row-header-expanded', currentTheme === 'night' ? 'row-header-expanded_dark' : '')}>
-            <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <Link to="/">
-                {" "}
-                <div
-                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
-                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                >
-                  Home
+        {/* {isDrawerOpen ?  */}
+
+        <Row className={classNames('row-header-expanded', !isDrawerOpen ? 'row-header-expanded_hidden' : '', currentTheme === 'night' ? 'row-header-expanded_dark' : '')}>
+          <Col xs="6" sm="3" md="3" lg="3" xl="3">
+            <Link to="/">
+              {" "}
+              <div
+                className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
+                onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              >
+                Home
                 </div>
-              </Link>
-            </Col>
-            <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <Link to="/blogs/">
-                <div
-                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
-                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                >
-                  Blog
+            </Link>
+          </Col>
+          <Col xs="6" sm="3" md="3" lg="3" xl="3">
+            <Link to="/blogs/">
+              <div
+                className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
+                onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              >
+                Blog
                 </div>
-              </Link>
-            </Col>
-            <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <Link to="/projects/">
-                {" "}
-                <div
-                  className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
-                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                >
-                  Projects
+            </Link>
+          </Col>
+          <Col xs="6" sm="3" md="3" lg="3" xl="3">
+            <Link to="/projects/">
+              {" "}
+              <div
+                className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
+                onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              >
+                Projects
                 </div>
-              </Link>
-            </Col>
-            <Col xs="6" sm="3" md="3" lg="3" xl="3">
-              <StaticQuery
-                query={graphql`
+            </Link>
+          </Col>
+          <Col xs="6" sm="3" md="3" lg="3" xl="3">
+            <StaticQuery
+              query={graphql`
                   {
                     resumeLink: allFile(filter: { extension: { eq: "docx" } }) {
                       edges {
@@ -131,31 +132,30 @@ const Header = (props) => {
                     }
                   }
                 `}
-                render={data => {
-                  return (
-                    <OutboundLink
-                      href={
-                        data &&
-                        data.resumeLink &&
-                        data.resumeLink.edges &&
-                        data.resumeLink.edges[0] &&
-                        data.resumeLink.edges[0].node &&
-                        data.resumeLink.edges[0].node.publicURL
-                      }
+              render={data => {
+                return (
+                  <OutboundLink
+                    href={
+                      data &&
+                      data.resumeLink &&
+                      data.resumeLink.edges &&
+                      data.resumeLink.edges[0] &&
+                      data.resumeLink.edges[0].node &&
+                      data.resumeLink.edges[0].node.publicURL
+                    }
+                  >
+                    <div
+                      className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
+                      onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                     >
-                      <div
-                        className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
-                        onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                      >
-                        Resume
+                      Resume
                       </div>
-                    </OutboundLink>
-                  );
-                }}
-              />
-            </Col>
-          </Row>
-        ) : null}
+                  </OutboundLink>
+                );
+              }}
+            />
+          </Col>
+        </Row>
       </Container>
     </header >
   );
@@ -165,7 +165,7 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
   theme: PropTypes.string.isRequired,
   toggleDarkMode: PropTypes.func.isRequired,
-  showHeader : PropTypes.bool.isRequired,
+  showHeader: PropTypes.bool.isRequired,
 };
 
 Header.defaultProps = {
