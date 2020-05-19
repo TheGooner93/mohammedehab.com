@@ -36,12 +36,13 @@ const ResumeContainer = (props) => {
         } = data;
 
         return (
-          <div className="container mt-4 mb-4" >
-            {/* <FileViewer fileType={fileType} filePath={filePath} /> */}
-            <iframe title='resume' src={`${filePath}`}
-              style={{width:'90%', height: '50rem'}} 
-              frameborder="0"></iframe>
-          </div>
+          <></>
+          // <div className="container mt-4 mb-4" >
+          //   {/* <FileViewer fileType={fileType} filePath={filePath} /> */}
+          //   <iframe title='resume' src={`${filePath}`}
+          //     style={{width:'90%', height: '50rem'}} 
+          //     frameborder="0"></iframe>
+          // </div>
         );
       }}
     />
