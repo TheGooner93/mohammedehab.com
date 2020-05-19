@@ -27,14 +27,18 @@
 .header-default {
   height: 5rem;
   background: none;
-  transition: height 0.2s ease-in-out;
+  transition: top 0.2s ease-in-out;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 100;
+  &_disappeared{
+    @extend .header-default;
+    top : -10rem;
+  }
   @media (max-width : 550px) {
     height: 4.2rem;
-    transition: height 0.2s ease-in-out;
-
+    transition: top 0.2s ease-in-out;
   }
   &::before,&::after {
     content: '';

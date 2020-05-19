@@ -16,7 +16,7 @@ import "../styles/header.scss";
 
 const Header = (props) => {
 
-  const { theme: currentStoredTheme = '', toggleDarkMode = () => { } } = props;
+  const { theme: currentStoredTheme = '', toggleDarkMode = () => { }, showHeader = true } = props;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('day');
@@ -37,9 +37,10 @@ const Header = (props) => {
   return (
     <header
       className={classNames({
-        "header-default": !isDrawerOpen && currentTheme === 'day',
-        "header-default_dark": currentTheme === 'night',
-        "header-expanded": isDrawerOpen
+        "header-default_disappeared" : !showHeader,
+        "header-default": showHeader && !isDrawerOpen && currentTheme === 'day',
+        "header-default_dark": showHeader && currentTheme === 'night',
+        "header-expanded": showHeader && isDrawerOpen
       })}
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
@@ -162,6 +163,7 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
   theme: PropTypes.string.isRequired,
   toggleDarkMode: PropTypes.func.isRequired,
+  showHeader : PropTypes.bool.isRequired,
 };
 
 Header.defaultProps = {
