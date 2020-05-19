@@ -46,3 +46,24 @@
     }
   }
 }
+
+.blog-post-text {
+  color: black;
+  transition : all 1s ease;
+    &_dark {
+      transition : all 1s ease;
+      color:  white;
+    }
+}
+
+.blog-post-image{
+  margin: 1rem;
+  max-width: 75%;
+  border: 3px solid lightgrey;
+  border-radius: 1.5rem;
+  transition : all 1s ease;
+    &_dark {
+      @extend .blog-post-image;
+      border: 3px solid white;
+    }
+}

@@ -1,12 +1,14 @@
 import React from "react";
+import classNames from 'classnames';
 import { Link, graphql } from "gatsby";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Moment from "react-moment";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import { connect } from "react-redux";
 
-export default ({ data }) => {
+const BlogPost = ({ data, theme }) => {
   const post = data && data.markdownRemark;
   return (
     <Layout>
@@ -16,24 +18,25 @@ export default ({ data }) => {
           <Col>
             <img
               src={post.frontmatter.thumbnail}
-              style={{
-                margin: "1rem",
-                maxWidth: "75%",
-                border: "5px outset white",
-                borderRadius: "1.5rem",
-              }}
+              className={classNames('blog-post-image' , theme === 'night' ? 'blog-post-image_dark' : '')}
+              // style={{
+              //   margin: "1rem",
+              //   maxWidth: "75%",
+              //   // border: "3px solid black",
+              //   borderRadius: "1.5rem",
+              // }}
               alt={post.frontmatter.title}
             />
           </Col>
         </Row>
         <Row>
           <Col>
-            <h1>{post.frontmatter.title}</h1>
+            <h1 className={classNames('blog-post-text', theme === 'night' ? 'blog-post-text_dark' : '')}>{post.frontmatter.title}</h1>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h5>
+            <h5 className={classNames('blog-post-text', theme === 'night' ? 'blog-post-text_dark' : '')}>
               Taken on{" "}
               <Moment format="DD MMM YYYY, hh:mm A">
                 {post.frontmatter.date}
@@ -43,7 +46,7 @@ export default ({ data }) => {
         </Row>
         <Row>
           <Col>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className={classNames('blog-post-text', theme === 'night' ? 'blog-post-text_dark' : '')} dangerouslySetInnerHTML={{ __html: post.html }} />
           </Col>
         </Row>
         <Row>
@@ -74,3 +77,9 @@ export const blogPostQuery = graphql`
     }
   }
 `;
+
+const mapStateToProps = state => ({
+  theme: state.theme.theme
+});
+
+export default connect(mapStateToProps, {})(BlogPost);
