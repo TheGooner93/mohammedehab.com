@@ -1,14 +1,15 @@
 import React from "react";
 import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { FACEBOOK_URL, LINKEDIN_URL, GITHUB_URL } from "../utils/websites";
+import { connect } from "react-redux";
 
-const Footer = () => {
+const Footer = ({theme = ''}) => {
   return (
     <footer
       style={{
         textAlign: "center",
         position: "absolute",
-        background: "black",
+        background: theme === 'day' ? "linear-gradient(23deg, rgba(24,44,148,1) 0%, rgba(0,0,0,1) 100%)" : 'black',
         width: "100%",
         minHeight: "6rem",
         bottom: 0,
@@ -47,4 +48,10 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const mapStateToProps = state => {
+  return {
+    theme: state.theme.theme
+  }
+};
+
+export default connect(mapStateToProps, {})(Footer);
