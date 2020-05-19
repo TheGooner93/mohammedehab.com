@@ -26,12 +26,14 @@ const Header = (props) => {
     setCurrentTheme(currentTheme);
   }, []);
 
+  useEffect(() => {
+    //Call action to update redux store
+    toggleDarkMode(currentTheme);
+  }, [currentTheme]);
+
   const onThemeButtonClick = () => {
     const newTheme = currentTheme === 'day' ? 'night' : 'day'
     setCurrentTheme(newTheme);
-
-    //Call action to update redux store
-    toggleDarkMode(newTheme);
   }
 
   return (

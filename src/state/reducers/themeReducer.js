@@ -2,7 +2,7 @@ import { TOGGLE_DARKMODE } from '../types';
 import helper from '../../utils/helper';
 
 const initialState = {
-    theme: helper.getCurrentTheme() || 'day',
+    theme: '',
 };
 
 export default (state = initialState, action) => {
