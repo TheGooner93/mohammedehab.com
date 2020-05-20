@@ -33,7 +33,6 @@ const Layout = ({ children, theme }) => {
 
     //Cleanup
     return () => window.removeEventListener('scroll', onScroll, false);
-
   }, []);
 
   useEffect(() => {
