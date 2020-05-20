@@ -1,9 +1,8 @@
 import React from "react";
 import classNames from 'classnames';
 import { connect } from "react-redux";
-import { Link } from "gatsby";
 import { Card } from "react-bootstrap";
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const BlogCardContainer = (props) => {
 
