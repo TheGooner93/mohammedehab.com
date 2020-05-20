@@ -1,8 +1,9 @@
 import React from "react";
 import classNames from 'classnames';
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Moment from "react-moment";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
@@ -19,12 +20,6 @@ const BlogPost = ({ data, theme }) => {
             <img
               src={post.frontmatter.thumbnail}
               className={classNames('blog-post-image' , theme === 'night' ? 'blog-post-image_dark' : '')}
-              // style={{
-              //   margin: "1rem",
-              //   maxWidth: "75%",
-              //   // border: "3px solid black",
-              //   borderRadius: "1.5rem",
-              // }}
               alt={post.frontmatter.title}
             />
           </Col>
@@ -51,11 +46,11 @@ const BlogPost = ({ data, theme }) => {
         </Row>
         <Row>
           <Col xs="12" sm="12" md="12" lg="12" xl="12">
-            <Link to="/blogs">
+            <AniLink cover bg={theme === 'night' ? '#2c3e50'  : '' } direction="right" to="/blogs">
               <Button variant="info" aria-label="Back to blogs">
                 Back to Blogs
               </Button>
-            </Link>
+            </AniLink>
           </Col>
         </Row>
       </Container>

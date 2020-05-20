@@ -28,7 +28,7 @@ const Layout = ({ children, theme }) => {
         previousScrollOffset.current = previousOffset;
         return window.pageYOffset;
       });
-    });
+    }, false);
   }, []);
 
   useEffect(() => {

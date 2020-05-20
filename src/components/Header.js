@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { connect } from 'react-redux';
 import { FaBars } from "react-icons/fa";
 import { RiSunLine, RiMoonLine } from "react-icons/ri";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import React, { useState, useEffect } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { OutboundLink } from "gatsby-plugin-google-analytics";

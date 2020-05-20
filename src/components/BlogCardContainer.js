@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { connect } from "react-redux";
 import { Link } from "gatsby";
 import { Card } from "react-bootstrap";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const BlogCardContainer = (props) => {
 
@@ -10,7 +11,8 @@ const BlogCardContainer = (props) => {
 
     const cardView = (
         <div className="blog-card-wrapper">
-            <Link
+            <AniLink
+                cover bg={theme === 'night' ? '#2c3e50'  : '' }
                 to={post.node.fields.slug}
                 style={{ textDecoration: "none" }}
             >
@@ -31,7 +33,7 @@ const BlogCardContainer = (props) => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-            </Link>
+            </AniLink>
         </div>
     );
 
