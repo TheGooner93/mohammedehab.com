@@ -17,7 +17,12 @@ import "../styles/header.scss";
 
 const Header = (props) => {
 
-  const { theme: currentStoredTheme = '', toggleDarkMode = () => { }, showHeader = true } = props;
+  const {
+    theme: currentStoredTheme = '',
+    toggleDarkMode = () => { },
+    showHeader = true,
+    toggleNotification = () => { }
+  } = props;
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState('day');
@@ -35,7 +40,12 @@ const Header = (props) => {
   const onThemeButtonClick = () => {
     const newTheme = currentTheme === 'day' ? 'night' : 'day'
     setCurrentTheme(newTheme);
-  }
+  };
+
+  const onResumeLinkClicked = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+    toggleNotification();
+  };
 
   return (
     <header
@@ -51,7 +61,7 @@ const Header = (props) => {
         <Row style={{ padding: "0.1rem 1.0875rem 0.1rem", justifyContent: 'space-between', alignItems: 'center' }}>
           <Col className={'pl-0 d-flex justify-content-start'}>
             <div className="header-image-wrapper" >
-              <AniLink cover bg={currentTheme === 'night' ? '#2c3e50'  : '' } direction="right" to="/" >
+              <AniLink cover bg={currentTheme === 'night' ? '#2c3e50' : ''} direction="right" to="/" >
                 <LogoImage />
               </AniLink>
             </div>
@@ -92,7 +102,7 @@ const Header = (props) => {
         </Row>
         <Row className={classNames('row-header-expanded', !isDrawerOpen ? 'row-header-expanded_hidden' : '', currentTheme === 'night' ? 'row-header-expanded_dark' : '')}>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <AniLink cover bg={currentTheme === 'night' ? 'gray'  : '' } direction="right" to="/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray' : ''} direction="right" to="/">
               {" "}
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
@@ -100,10 +110,10 @@ const Header = (props) => {
               >
                 Home
               </div>
-            </AniLink> 
+            </AniLink>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <AniLink cover bg={currentTheme === 'night' ? 'gray'  : '' } to="/blogs/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray' : ''} to="/blogs/">
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
@@ -113,7 +123,7 @@ const Header = (props) => {
             </AniLink>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <AniLink cover bg={currentTheme === 'night' ? 'gray'  : '' } to="/projects/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray' : ''} to="/projects/">
               {" "}
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
@@ -150,7 +160,7 @@ const Header = (props) => {
                   >
                     <div
                       className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
-                      onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                      onClick={onResumeLinkClicked}
                     >
                       Resume
                     </div>
@@ -169,6 +179,7 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
   theme: PropTypes.string.isRequired,
   toggleDarkMode: PropTypes.func.isRequired,
+  toggleNotification: PropTypes.func.isRequired,
   showHeader: PropTypes.bool.isRequired,
 };
 

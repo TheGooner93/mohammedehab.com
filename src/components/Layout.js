@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import classNames from 'classnames';
 import { StaticQuery, graphql } from "gatsby";
+import { useToasts } from 'react-toast-notifications'
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -21,6 +22,7 @@ const Layout = ({ children, theme }) => {
   const [showHeader, setShowHeader] = useState(true);
   const [currentScrollOffset, setCurrentScrollOffset] = useState(0);
   const previousScrollOffset = useRef(0);
+  const { addToast } = useToasts();
 
   useEffect(() => {
     const onScroll = () => {
@@ -41,7 +43,14 @@ const Layout = ({ children, theme }) => {
     } else {
       setShowHeader(true);
     }
-  }, [currentScrollOffset])
+  }, [currentScrollOffset]);
+
+  const toggleNotification = () => {
+    addToast('Downloading file...', {
+      appearance: 'info',
+      autoDismiss: true,
+    });
+  }
 
   return <StaticQuery
     query={graphql`
@@ -54,13 +63,13 @@ const Layout = ({ children, theme }) => {
       }
     `}
     render={() => (
-      <div style={{ position: "relative" }}>
-        <Header showHeader={showHeader} />
-        <div className={classNames('layout-content-wrapper', theme === 'night' ? 'layout-content-wrapper_dark' : '')}>
-          <main>{children}</main>
+        <div style={{ position: "relative" }}>
+          <Header showHeader={showHeader} toggleNotification={toggleNotification} />
+          <div className={classNames('layout-content-wrapper', theme === 'night' ? 'layout-content-wrapper_dark' : '')}>
+            <main>{children}</main>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
     )}
   />
 };
