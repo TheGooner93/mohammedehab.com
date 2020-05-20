@@ -1,8 +1,10 @@
 import React from "react";
 import classNames from 'classnames';
 import { connect } from "react-redux";
-import { StaticQuery, graphql, Link } from "gatsby";
-import { Container, Card, Row, Col } from "react-bootstrap";
+import { StaticQuery, graphql } from "gatsby";
+import { Container, Row, Col } from "react-bootstrap";
+
+import BlogCardContainer from './BlogCardContainer';
 
 const BlogsContainer = (props) => {
 
@@ -39,33 +41,10 @@ const BlogsContainer = (props) => {
       return (
         <Container>
           {blogsPosts.length ? (
-            data.allMarkdownRemark.edges.map((post,index) => (
+            data.allMarkdownRemark.edges.map((post) => (
               <Row key={post.node.id} className={`animate__animated animate__flipInX animate__fast`}>
                 <Col xs="12" sm="12" md="12" lg="12" xl="12">
-                  <div className="blog-card-wrapper">
-                    <Link
-                      to={post.node.fields.slug}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <Card
-                        className={classNames('blog-card text-white', theme === 'night' ? 'blog-card_dark' : '')}
-                        style={{
-                          background: `url(${post.node.frontmatter.thumbnail})`,
-                          backgroundSize: 'cover',
-                          backgroundPosition: "center",
-                        }}
-                      >
-                        <Card.Body className="blog-card_blur">
-                          <Card.Title>
-                            <h3>{post.node.frontmatter.title}</h3>
-                          </Card.Title>
-                          <Card.Text>
-                            {post.node.frontmatter.description}
-                          </Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </Link>
-                  </div>
+                  <BlogCardContainer post={post} />
                 </Col>
               </Row>
             ))
