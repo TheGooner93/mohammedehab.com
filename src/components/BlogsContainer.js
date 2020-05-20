@@ -50,6 +50,7 @@ const BlogsContainer = (props) => {
                       <Card
                         className={classNames('blog-card text-white', theme === 'night' ? 'blog-card_dark' : '')}
                         style={{
+                          background :'black',
                           background: `url(${post.node.frontmatter.thumbnail})`,
                           backgroundRepeat: "no-repeat",
                           backgroundSize: "55rem",
