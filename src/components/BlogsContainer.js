@@ -42,7 +42,7 @@ const BlogsContainer = (props) => {
         <Container>
           {blogsPosts.length ? (
             data.allMarkdownRemark.edges.map((post) => (
-              <Row key={post.node.id} className={`animate__animated animate__flipInX animate__fast`}>
+              <Row key={post.node.id}>
                 <Col xs="12" sm="12" md="12" lg="12" xl="12">
                   <BlogCardContainer post={post} />
                 </Col>

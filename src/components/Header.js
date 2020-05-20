@@ -7,6 +7,7 @@ import { Link, StaticQuery, graphql } from "gatsby";
 import React, { useState, useEffect } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import LogoImage from "./LogoImage";
 import helper from '../utils/helper';
@@ -48,46 +49,50 @@ const Header = (props) => {
     >
       <Container style={{ height: "inherit", maxWidth: "100%" }}>
         <Row style={{ padding: "0.1rem 1.0875rem 0.1rem", justifyContent: 'space-between', alignItems: 'center' }}>
-          <div className="header-image-wrapper" >
-            <Link to="/">
-              <LogoImage />
-            </Link>
-          </div>
-          <div className='d-flex justify-content-center'>
-            <div className="header-drawer" style={{ padding: `0.15rem` }}>
-              <Button
-                variant={currentTheme === 'night' ? "dark" : "light"}
-                onClick={onThemeButtonClick}
-                aria-label="Toggle theme"
-              >
-                {
-                  currentTheme === 'night' ? <RiMoonLine
-                    color={currentTheme === 'night' ? "white" : "black"}
-                    className={'header-drawer-icon'}
-                  /> : <RiSunLine
+          <Col className={'pl-0 d-flex justify-content-start'}>
+            <div className="header-image-wrapper" >
+              <AniLink cover bg={currentTheme === 'night' ? '#2c3e50'  : '' } direction="right" to="/" >
+                <LogoImage />
+              </AniLink>
+            </div>
+          </Col>
+          <Col className={'pr-0 d-flex justify-content-end'}>
+            <div className='d-flex'>
+              <div className="header-drawer" style={{ padding: `0.15rem` }}>
+                <Button
+                  variant={currentTheme === 'night' ? "dark" : "light"}
+                  onClick={onThemeButtonClick}
+                  aria-label="Toggle theme"
+                >
+                  {
+                    currentTheme === 'night' ? <RiMoonLine
                       color={currentTheme === 'night' ? "white" : "black"}
                       className={'header-drawer-icon'}
-                    />
-                }
-              </Button>
+                    /> : <RiSunLine
+                        color={currentTheme === 'night' ? "white" : "black"}
+                        className={'header-drawer-icon'}
+                      />
+                  }
+                </Button>
+              </div>
+              <div className="header-drawer" style={{ padding: `0.15rem` }}>
+                <Button
+                  variant={isDrawerOpen ? "dark" : "light"}
+                  onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+                  aria-label="Open drawer"
+                >
+                  <FaBars
+                    color={isDrawerOpen ? "white" : "black"}
+                    className={'header-drawer-icon'}
+                  />
+                </Button>
+              </div>
             </div>
-            <div className="header-drawer" style={{ padding: `0.15rem` }}>
-              <Button
-                variant={isDrawerOpen ? "dark" : "light"}
-                onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-                aria-label="Open drawer"
-              >
-                <FaBars
-                  color={isDrawerOpen ? "white" : "black"}
-                  className={'header-drawer-icon'}
-                />
-              </Button>
-            </div>
-          </div>
+          </Col>
         </Row>
         <Row className={classNames('row-header-expanded', !isDrawerOpen ? 'row-header-expanded_hidden' : '', currentTheme === 'night' ? 'row-header-expanded_dark' : '')}>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <Link to="/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray'  : '' } direction="right" to="/">
               {" "}
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
@@ -95,20 +100,20 @@ const Header = (props) => {
               >
                 Home
               </div>
-            </Link>
+            </AniLink> 
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <Link to="/blogs/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray'  : '' } to="/blogs/">
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
               >
                 Blog
               </div>
-            </Link>
+            </AniLink>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <Link to="/projects/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray'  : '' } to="/projects/">
               {" "}
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
@@ -116,7 +121,7 @@ const Header = (props) => {
               >
                 Projects
               </div>
-            </Link>
+            </AniLink>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
             <StaticQuery
