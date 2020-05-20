@@ -11,7 +11,7 @@ const AboutMeCard = () => {
     >
       <Card bg="warning" text="white">
         <Card.Body>
-          <Card.Title>I am also...</Card.Title>
+          <Card.Title style={{color : 'purple'}}>I am also...</Card.Title>
           <ListGroup>
             <ListGroup.Item variant="warning">
               {" "}

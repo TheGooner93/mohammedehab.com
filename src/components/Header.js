@@ -85,8 +85,6 @@ const Header = (props) => {
             </div>
           </div>
         </Row>
-        {/* {isDrawerOpen ?  */}
-
         <Row className={classNames('row-header-expanded', !isDrawerOpen ? 'row-header-expanded_hidden' : '', currentTheme === 'night' ? 'row-header-expanded_dark' : '')}>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
             <Link to="/">
@@ -96,7 +94,7 @@ const Header = (props) => {
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
               >
                 Home
-                </div>
+              </div>
             </Link>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
@@ -106,7 +104,7 @@ const Header = (props) => {
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
               >
                 Blog
-                </div>
+              </div>
             </Link>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
@@ -117,7 +115,7 @@ const Header = (props) => {
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
               >
                 Projects
-                </div>
+              </div>
             </Link>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
@@ -150,7 +148,7 @@ const Header = (props) => {
                       onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                     >
                       Resume
-                      </div>
+                    </div>
                   </OutboundLink>
                 );
               }}

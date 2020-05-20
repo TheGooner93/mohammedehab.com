@@ -2,8 +2,9 @@ import React from "react";
 import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { FACEBOOK_URL, LINKEDIN_URL, GITHUB_URL } from "../utils/websites";
 import { connect } from "react-redux";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-const Footer = ({theme = ''}) => {
+const Footer = ({ theme = '' }) => {
   return (
     <footer
       style={{
@@ -25,23 +26,21 @@ const Footer = ({theme = ''}) => {
       >
         <div>© {new Date().getFullYear()} | Mohammed Ehab</div>
         <div>
-          <a
+          <OutboundLink
             href={FACEBOOK_URL}
-            style={{ color: "white" }}
             aria-label="Facebook"
           >
             <FaFacebookSquare size="1.3em" />
-          </a>{" "}
-          <a
+          </OutboundLink>{" "}
+          <OutboundLink
             href={LINKEDIN_URL}
-            style={{ color: "white" }}
             aria-label="LinkedIn"
           >
             <FaLinkedin size="1.3em" />
-          </a>{" "}
-          <a href={GITHUB_URL} aria-label="Github">
+          </OutboundLink>{" "}
+          <OutboundLink href={GITHUB_URL} aria-label="Github">
             <FaGithubSquare size="1.3em" style={{ color: "white" }} />
-          </a>
+          </OutboundLink>
         </div>
       </div>
     </footer>
