@@ -23,12 +23,17 @@ const Layout = ({ children, theme }) => {
   const previousScrollOffset = useRef(0);
 
   useEffect(() => {
-    window.addEventListener('scroll', e => {
+    const onScroll = () => {
       setCurrentScrollOffset(previousOffset => {
         previousScrollOffset.current = previousOffset;
         return window.pageYOffset;
       });
-    }, false);
+    };
+    window.addEventListener('scroll', onScroll, false);
+
+    //Cleanup
+    return () => window.removeEventListener('scroll', onScroll, false);
+
   }, []);
 
   useEffect(() => {
