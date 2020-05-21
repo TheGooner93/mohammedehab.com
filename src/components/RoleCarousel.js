@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "gatsby";
+import { connect } from 'react-redux';
 import { Carousel, CarouselItem } from "react-bootstrap";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-const RoleCarousel = () => (
+const RoleCarousel = ({theme = ''}) => (
   <div
     style={{
       margin: "auto",
@@ -13,21 +14,27 @@ const RoleCarousel = () => (
   >
     <Carousel indicators={false} controls={false} interval="3000">
       <CarouselItem>
-        <Link to="/projects" style={{ color: "white", textDecoration: "none" }}>
+        <AniLink cover bg={theme === 'night' ? '#2c3e50' : ''} direction="left" to="/projects" style={{ color: "white", textDecoration: "none" }}>
           <h3 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
             developer
           </h3>
-        </Link>
+        </AniLink>
       </CarouselItem>
       <CarouselItem>
-        <Link to="/blogs" style={{ color: "white", textDecoration: "none" }}>
+        <AniLink cover bg={theme === 'night' ? '#2c3e50' : ''} direction="left" to="/blog" style={{ color: "white", textDecoration: "none" }}>
           <h3 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
             photoblogger
           </h3>
-        </Link>
+        </AniLink>
       </CarouselItem>
     </Carousel>
   </div>
 );
 
-export default RoleCarousel;
+const mapStateToProps = state => {
+  return {
+    theme: state.theme.theme
+  }
+};
+
+export default connect(mapStateToProps, {})(RoleCarousel);

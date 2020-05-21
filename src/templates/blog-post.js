@@ -46,7 +46,7 @@ const BlogPost = ({ data, theme }) => {
         </Row>
         <Row>
           <Col xs="12" sm="12" md="12" lg="12" xl="12">
-            <AniLink cover bg={theme === 'night' ? '#2c3e50'  : '' } direction="right" to="/blogs">
+            <AniLink cover bg={theme === 'night' ? '#2c3e50'  : '' } direction="right" to="/blog">
               <Button variant="info" aria-label="Back to blogs">
                 Back to Blogs
               </Button>

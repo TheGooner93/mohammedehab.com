@@ -115,7 +115,7 @@ const Header = (props) => {
             </AniLink>
           </Col>
           <Col xs="6" sm="3" md="3" lg="3" xl="3">
-            <AniLink cover bg={currentTheme === 'night' ? 'gray' : ''} to="/blogs/">
+            <AniLink cover bg={currentTheme === 'night' ? 'gray' : ''} to="/blog/">
               <div
                 className={classNames("drawer-cell", currentTheme === 'night' ? 'drawer-cell_dark' : '')}
                 onClick={() => setIsDrawerOpen(!isDrawerOpen)}
