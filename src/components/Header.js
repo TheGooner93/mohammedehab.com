@@ -70,6 +70,7 @@ const Header = (props) => {
             <div className='d-flex'>
               <div className="header-drawer" style={{ padding: `0.15rem` }}>
                 <Button
+                  className={'header-button'}
                   variant={currentTheme === 'night' ? "dark" : "light"}
                   onClick={onThemeButtonClick}
                   aria-label="Toggle theme"
@@ -87,6 +88,7 @@ const Header = (props) => {
               </div>
               <div className="header-drawer" style={{ padding: `0.15rem` }}>
                 <Button
+                  className={'header-button'}
                   variant={isDrawerOpen ? "dark" : "light"}
                   onClick={() => setIsDrawerOpen(!isDrawerOpen)}
                   aria-label="Open drawer"
