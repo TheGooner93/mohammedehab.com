@@ -126,7 +126,7 @@
 .row-header-expanded {
   background: black;
   z-index: -1;
-  border : 1px solid grey;
+  border : 1px solid transparent;
   height : 4.1rem;
   transition: all 0.2s ease-in-out;
   opacity: 1;

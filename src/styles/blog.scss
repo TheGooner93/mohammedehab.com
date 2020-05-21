@@ -19,9 +19,13 @@
     position: relative;
     border: none;
     border-radius: 0.7rem;
-    &_blur {
-      backdrop-filter: blur(3px);
+    &_text {
+      // backdrop-filter: blur(3px);
+      color : black;
       border-radius: inherit;
+    }
+    &_text_dark {
+      color : white
     }
     @media (max-width: 1199px) {
       background-size: 43rem !important;
