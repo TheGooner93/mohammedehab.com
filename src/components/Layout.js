@@ -68,7 +68,7 @@ const Layout = ({ children, theme }) => {
           <div className={classNames('layout-content-wrapper', theme === 'night' ? 'layout-content-wrapper_dark' : '')}>
             <main>{children}</main>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
     )}
   />

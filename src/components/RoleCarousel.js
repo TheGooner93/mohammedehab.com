@@ -7,7 +7,7 @@ const RoleCarousel = ({theme = ''}) => (
   <div
     style={{
       margin: "auto",
-      maxWidth: "300px",
+      maxWidth: "250px",
       background: "red",
       borderRadius: "10px"
     }}
@@ -15,16 +15,16 @@ const RoleCarousel = ({theme = ''}) => (
     <Carousel indicators={false} controls={false} interval="3000">
       <CarouselItem>
         <AniLink cover bg={theme === 'night' ? '#2c3e50' : ''} direction="left" to="/projects" style={{ color: "white", textDecoration: "none" }}>
-          <h3 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
+          <h4 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
             developer
-          </h3>
+          </h4>
         </AniLink>
       </CarouselItem>
       <CarouselItem>
         <AniLink cover bg={theme === 'night' ? '#2c3e50' : ''} direction="left" to="/blog" style={{ color: "white", textDecoration: "none" }}>
-          <h3 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
+          <h4 style={{ marginBottom: "0.2rem", padding: "0.2rem" }}>
             photoblogger
-          </h3>
+          </h4>
         </AniLink>
       </CarouselItem>
     </Carousel>

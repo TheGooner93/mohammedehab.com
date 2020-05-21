@@ -1,8 +1,10 @@
 .projects-container {
   text-align: center;
   &-heading {
+    color : black;
     border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     &_dark {
+      color : white;
       border-bottom: 1px solid white;
     }
   }

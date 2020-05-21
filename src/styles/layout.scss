@@ -29,20 +29,23 @@ a {
 }
 
 .layout-content-wrapper {
-  margin: 0 auto;
-  padding: 1.5rem 1.0875rem 7rem;
+  margin: 10vh auto 0;
+  padding: 1rem 1.0875rem;
   background: whitesmoke;
   transition : background 0.2s ease-in-out;
-  min-height: 100vh;
-  border-top : 1px whitesmoke solid;
   z-index: 10;
+  min-height: 90vh;
   &_dark {
     @extend .layout-content-wrapper;
     background: black;
   }
-  padding-top : 6.5rem;
   @media (max-width : 550px) {
-    padding-top: 5.5rem;
+    margin: 9vh auto 0rem;
+    min-height: 91vh;
+  }
+  main {
+    height : 100%;
   }
 }
+
 

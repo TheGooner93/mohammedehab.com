@@ -78,10 +78,10 @@ const ProjectsContainer = (props) => {
 
 
   return (
-    <Container className="projects-container">
+    <Container className="mt-3 projects-container">
       <Row>
         <Col>
-          <h1 className={classNames('pb-3 layout-text', theme === 'night' ? 'layout-text_dark projects-container-heading_dark' : 'projects-container-heading')}>Projects</h1>
+          <h1 className={classNames('pb-3', theme === 'night' ? 'projects-container-heading_dark' : 'projects-container-heading')}>Projects</h1>
         </Col>
       </Row>
       <Row>
