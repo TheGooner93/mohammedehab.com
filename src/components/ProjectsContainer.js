@@ -47,9 +47,9 @@ const ProjectsContainer = (props) => {
                 <Col
                   xs="12"
                   sm="12"
-                  md="6"
-                  lg="4"
-                  xl="4"
+                  md="12"
+                  lg="12"
+                  xl="12"
                   key={pinnedRepo.id}
                   className={'project-card-wrapper'}
                 >
