@@ -29,7 +29,6 @@ a {
 }
 
 .layout-content-wrapper {
-  margin: 10vh auto 0;
   padding: 1rem 1.0875rem;
   background: whitesmoke;
   transition : background 0.2s ease-in-out;
@@ -40,8 +39,7 @@ a {
     background: black;
   }
   @media (max-width : 550px) {
-    margin: 9vh auto 0rem;
-    min-height: 91vh;
+    // min-height: 91vh;
   }
   main {
     height : 100%;

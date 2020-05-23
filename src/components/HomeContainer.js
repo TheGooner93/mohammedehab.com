@@ -72,7 +72,7 @@ const HomeContainer = (props) => {
                 <InlineIcon icon={javascriptIcon} className={'mr-2'} />
                 <InlineIcon icon={ts} className={'mr-2'} />
             </div>
-            <div className={classNames(`home-footer-text mt-4 mt-sm-4 ${animationClass} animate__delay-1s`, theme === 'night' ? 'home-dark-text' : '')}>
+            <div className={classNames(`home-footer-text mt-4 mt-sm-4 ${animationClass} animate__delay-2s`, theme === 'night' ? 'home-dark-text' : '')}>
                 <span>
                     Want to get in touch?
                     <div className={'ml-2'}>

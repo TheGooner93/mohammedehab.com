@@ -6,8 +6,10 @@
     align-items: center;
     text-align: center;
     height : 100%;
-    padding-top: 2rem;
-
+    padding-top: 0.8rem;
+    // @media (max-width: 550px) {
+    //     padding-top: 0.8rem;
+    // }
     .profile-image-wrapper {
         width : 100%;
         max-width: 180px;
