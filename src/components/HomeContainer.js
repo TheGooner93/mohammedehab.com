@@ -75,7 +75,7 @@ const HomeContainer = (props) => {
                         <OutboundLink
                             href={EMAIL_URL}
                             aria-label="Email">
-                            <MdEmail size="1.3em" style={{ color: theme === 'day' ? "black" : 'white' }} />
+                            <MdEmail size="1.22em" style={{ color: theme === 'day' ? "black" : 'white' }} />
                         </OutboundLink>
                         <OutboundLink
                             className={'ml-2'}
