@@ -38,8 +38,9 @@ a {
     @extend .layout-content-wrapper;
     background: black;
   }
-  @media (max-width : 550px) {
-    // min-height: 91vh;
+  @media (min-width: 1700px) {
+    min-height: 92vh;
+    transition: top 0.2s ease-in-out;
   }
   main {
     height : 100%;
