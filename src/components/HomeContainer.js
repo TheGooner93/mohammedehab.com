@@ -1,33 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import classNames from 'classnames';
-import RoleCarousel from "../components/RoleCarousel";
-import AboutMeCard from "../components/AboutMeCard";
-import ProfileImage from "../components/ProfileImage";
-
 import { InlineIcon } from '@iconify/react';
-import reactIcon from '@iconify/icons-logos/react';
-import reduxIcon from '@iconify/icons-logos/redux';
-import javascriptIcon from '@iconify/icons-logos/javascript';
-import css3 from '@iconify/icons-logos/css-3';
-import bootstrap from '@iconify/icons-logos/bootstrap';
-import ts from '@iconify/icons-logos/typescript-icon';
-import mysql from '@iconify/icons-logos/mysql';
-import graphql from '@iconify/icons-logos/graphql';
-import jest from '@iconify/icons-logos/jest';
-import nodejs from '@iconify/icons-logos/nodejs-icon';
-import docker from '@iconify/icons-logos/docker-icon';
-import gatsby from '@iconify/icons-logos/gatsby';
-import grunt from '@iconify/icons-logos/grunt';
-import mongodb from '@iconify/icons-logos/mongodb';
-import git from '@iconify/icons-logos/git-icon';
-
-import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { FaFacebookSquare, FaLinkedin, FaGithubSquare } from "react-icons/fa";
+
+import RoleCarousel from "../components/RoleCarousel";
+import ProfileImage from "../components/ProfileImage";
 
 import { setIsFirstLoadDone } from '../state/actions/loader.action';
 import { FACEBOOK_URL, LINKEDIN_URL, GITHUB_URL, EMAIL_URL } from "../utils/websites";
+import helper from '../utils/helper';
 
 const HomeContainer = (props) => {
     const { theme = '', isFirstLoadDone = false, setIsFirstLoadDone = () => { } } = props;
@@ -38,6 +22,18 @@ const HomeContainer = (props) => {
     }, []);
 
     const animationClass = !isFirstLoadDone ? 'animate__animated animate__zoomInDown animate__fast' : '';
+
+    const getSkillView = (skill) => {
+        const { url = '', icon = '' } = helper.getSkillIconInfo(skill);
+
+        return (<OutboundLink
+            href={url}
+            aria-label={skill}
+            target="_blank">
+            <InlineIcon icon={icon} className={'mr-2'} />
+        </OutboundLink>
+        );
+    };
 
     return (
         <div className={'home-container'}>
@@ -63,14 +59,14 @@ const HomeContainer = (props) => {
                 I build websites, apps and more.
             </div>
             <div className={classNames(`home-about-text mt-1 ${animationClass} animate__delay-1s`, theme === 'night' ? 'home-dark-text' : '')}>
-                <span className={'mr-1'}>I'm a huge fan of</span>
-                <InlineIcon icon={reactIcon} className={'mr-2'} />
-                <InlineIcon icon={reduxIcon} className={'mr-2'} />
-                <InlineIcon icon={graphql} className={'mr-2'} />
-                <InlineIcon icon={nodejs} className={'mr-2'} />
-                <InlineIcon icon={gatsby} className={'mr-2'} />
-                <InlineIcon icon={javascriptIcon} className={'mr-2'} />
-                <InlineIcon icon={ts} className={'mr-2'} />
+                <span className={'mr-2'}>I'm a huge fan of</span>
+                {getSkillView('react')}
+                {getSkillView('redux')}
+                {getSkillView('graphql')}
+                {getSkillView('nodejs')}
+                {getSkillView('gatsby')}
+                {getSkillView('js')}
+                {getSkillView('ts')}
             </div>
             <div className={classNames(`home-footer-text mt-4 mt-sm-4 ${animationClass} animate__delay-2s`, theme === 'night' ? 'home-dark-text' : '')}>
                 <span>
@@ -79,27 +75,27 @@ const HomeContainer = (props) => {
                         <OutboundLink
                             href={EMAIL_URL}
                             aria-label="Email">
-                            <MdEmail size="1.3em" style={{ color: theme === 'day'? "black" : 'white' }} />
+                            <MdEmail size="1.3em" style={{ color: theme === 'day' ? "black" : 'white' }} />
                         </OutboundLink>
                         <OutboundLink
                             className={'ml-2'}
                             href={FACEBOOK_URL}
                             aria-label="Facebook"
                         >
-                            <FaFacebookSquare size="1em" style={{ color: theme === 'day'? "black" : 'white' }} />
+                            <FaFacebookSquare size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
                         </OutboundLink>{" "}
                         <OutboundLink
                             className={'ml-1'}
                             href={LINKEDIN_URL}
                             aria-label="LinkedIn"
                         >
-                            <FaLinkedin size="1em" style={{ color: theme === 'day'? "black" : 'white' }} />
+                            <FaLinkedin size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
                         </OutboundLink>{" "}
                         <OutboundLink
                             className={'ml-1'}
                             href={GITHUB_URL}
                             aria-label="Github">
-                            <FaGithubSquare size="1em" style={{ color: theme === 'day'? "black" : 'white' }} />
+                            <FaGithubSquare size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
                         </OutboundLink>
                     </div>
                 </span>

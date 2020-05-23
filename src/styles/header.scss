@@ -131,7 +131,7 @@
   border : 1px solid transparent;
   height : 4.1rem;
   transition: all 0.2s ease-in-out;
-  opacity: 1;
+  // opacity: 1;
   @media (max-width : 575px) {
     height : 8.2rem;
     transition: all 0.2s ease-in-out;
@@ -154,6 +154,7 @@
   @extend .header-default;
   height: 9rem;
   transition: height 0.2s ease-in-out;
+  background: transparent;
   @media screen and (max-width: 575px) {
     transition: height 0.2s ease-in-out;
     height: 12.3rem;
