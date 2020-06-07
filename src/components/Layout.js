@@ -66,7 +66,7 @@ const Layout = ({ children, theme }) => {
         <div style={{ position: "relative" }}>
           <Header showHeader={showHeader} toggleNotification={toggleNotification} />
           <div className={classNames('layout-content-wrapper', theme === 'night' ? 'layout-content-wrapper_dark' : '')}>
-            <main>{children}</main>
+           {children}
           </div>
           {/* <Footer /> */}
         </div>

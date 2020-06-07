@@ -37,7 +37,7 @@ const HomeContainer = (props) => {
 
 
     const homeContactView = (
-        <div className={classNames(`home-contact-text mt-4 mt-sm-4 ${animationClass} animate__delay-2s`, theme === 'night' ? 'home-dark-text' : '')}>
+        <div className={classNames(`home-contact-text ${animationClass} animate__delay-2s`, theme === 'night' ? 'home-dark-text' : '')}>
             <span>
                 Want to get in touch?
                     <div className={'ml-2'}>
