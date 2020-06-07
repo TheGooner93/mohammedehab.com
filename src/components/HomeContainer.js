@@ -35,17 +35,52 @@ const HomeContainer = (props) => {
         );
     };
 
-    return (
-        <div className={'home-container'}>
+
+    const homeContactView = (
+        <div className={classNames(`home-contact-text mt-4 mt-sm-4 ${animationClass} animate__delay-2s`, theme === 'night' ? 'home-dark-text' : '')}>
+            <span>
+                Want to get in touch?
+                    <div className={'ml-2'}>
+                    <OutboundLink
+                        href={EMAIL_URL}
+                        aria-label="Email">
+                        <MdEmail size="1.22em" style={{ color: theme === 'day' ? "black" : 'white' }} />
+                    </OutboundLink>
+                    <OutboundLink
+                        className={'ml-2'}
+                        href={FACEBOOK_URL}
+                        aria-label="Facebook"
+                    >
+                        <FaFacebookSquare size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
+                    </OutboundLink>{" "}
+                    <OutboundLink
+                        className={'ml-1'}
+                        href={LINKEDIN_URL}
+                        aria-label="LinkedIn"
+                    >
+                        <FaLinkedin size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
+                    </OutboundLink>{" "}
+                    <OutboundLink
+                        className={'ml-1'}
+                        href={GITHUB_URL}
+                        aria-label="Github">
+                        <FaGithubSquare size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
+                    </OutboundLink>
+                </div>
+            </span>
+        </div>
+    );
+    const homeContentView = (
+        <>
             <div className={`profile-image-wrapper ${animationClass}`}>
                 <ProfileImage />
             </div>
-            <div className={classNames(`home-hi-text mt-3 ${animationClass} animate__delay-1s`)}>
+            <div className={classNames(`home-hi-text mt-3 ${animationClass}`)}>
                 <div className={classNames('layout-text', theme === 'night' ? 'layout-text_dark' : '')}>
                     <div>Hi, I'm</div>
                     <span className={classNames('ml-0', theme === 'day' ? 'home-name-text' : 'home-name-text_dark')}>
                         Mohammed Ehab
-                    </span>
+                                </span>
                     <span>!</span>
                 </div>
             </div>
@@ -57,7 +92,7 @@ const HomeContainer = (props) => {
             </div>
             <div className={classNames(`home-about-text mt-4 ${animationClass} animate__delay-1s`, theme === 'night' ? 'home-dark-text' : '')}>
                 I build websites, apps and more.
-            </div>
+                        </div>
             <div className={classNames(`home-about-text mt-1 ${animationClass} animate__delay-1s`, theme === 'night' ? 'home-dark-text' : '')}>
                 <span className={'mr-2'}>I'm a huge fan of</span>
                 {getSkillView('react')}
@@ -68,38 +103,13 @@ const HomeContainer = (props) => {
                 {getSkillView('js')}
                 {getSkillView('ts')}
             </div>
-            <div className={classNames(`home-footer-text mt-4 mt-sm-4 ${animationClass} animate__delay-2s`, theme === 'night' ? 'home-dark-text' : '')}>
-                <span>
-                    Want to get in touch?
-                    <div className={'ml-2'}>
-                        <OutboundLink
-                            href={EMAIL_URL}
-                            aria-label="Email">
-                            <MdEmail size="1.22em" style={{ color: theme === 'day' ? "black" : 'white' }} />
-                        </OutboundLink>
-                        <OutboundLink
-                            className={'ml-2'}
-                            href={FACEBOOK_URL}
-                            aria-label="Facebook"
-                        >
-                            <FaFacebookSquare size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
-                        </OutboundLink>{" "}
-                        <OutboundLink
-                            className={'ml-1'}
-                            href={LINKEDIN_URL}
-                            aria-label="LinkedIn"
-                        >
-                            <FaLinkedin size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
-                        </OutboundLink>{" "}
-                        <OutboundLink
-                            className={'ml-1'}
-                            href={GITHUB_URL}
-                            aria-label="Github">
-                            <FaGithubSquare size="1em" style={{ color: theme === 'day' ? "black" : 'white' }} />
-                        </OutboundLink>
-                    </div>
-                </span>
-            </div>
+            {homeContactView}
+        </>
+    );
+
+    return (
+        <div className={'home-container'}>
+            {homeContentView}
         </div >
     )
 };

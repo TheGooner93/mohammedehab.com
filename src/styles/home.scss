@@ -99,20 +99,20 @@
         }
     }
 
-    .home-footer-text {
-        position: fixed;
-        bottom: 2rem;
+    .home-contact-text {
+        position: relative;
         margin-top: 1rem;
         font-size: 1.45rem;
         transition: all 0.2s ease;
         @media (max-width : 1920px){
             transition: all 0.2s ease;
             font-size: 1.05rem;
+            top: 2rem;
         }
         @media (max-width : 600px){
             transition: all 0.2s ease;
             font-size: 1rem;
-            bottom: 1rem;
+            top: 1rem;
         }
         @media (max-width : 374px){
             transition: all 0.2s ease;
