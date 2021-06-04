@@ -17,7 +17,7 @@ const ProfileImage = () => (
   <StaticQuery
     query={graphql`
       {
-        placeholderImage: file(relativePath: { eq: "EhabPortrait.png" }) {
+        placeholderImage: file(relativePath: { eq: "Ehab.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
@@ -26,7 +26,7 @@ const ProfileImage = () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} style={{borderRadius: '500px'}}/>}
   />
 );
 export default ProfileImage;
