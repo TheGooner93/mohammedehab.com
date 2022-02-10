@@ -27,7 +27,7 @@
     "gsap": "^3.6.1",
     "moment": "^2.29.1",
     "netlify-cms": "^2.10.137",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "randomcolor": "^0.5.4",
     "react": "^16.14.0",
