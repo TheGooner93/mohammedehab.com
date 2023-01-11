@@ -22,7 +22,7 @@
     "gatsby-plugin-typography": "^2.12.0",
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-source-github-api": "^0.1.5",
-    "gatsby-transformer-remark": "^2.16.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.12.1",
     "gsap": "^3.6.1",
     "moment": "^2.29.1",
